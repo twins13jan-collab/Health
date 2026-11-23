@@ -1,0 +1,22 @@
+import ModulePage from "@/components/ModulePage";
+
+export default function Page() {
+  return (
+    <ModulePage
+      config={{
+        titleKey: "capacity",
+        subtitleAr: "إشغال المنشآت وطنيًا — مجاميع فقط دون تفاصيل مرضى (دورة 225)",
+        subtitleEn: "National facility occupancy — aggregates only, never patient details (cycle 225)",
+        endpoint: "/api/capacity/board",
+        envelopeKey: "board",
+        columns: [
+          { key: "name_ar", ar: "المنشأة", en: "Facility" },
+          { key: "governorate", ar: "المحافظة", en: "Governorate" },
+          { key: "bed_capacity", ar: "السعة", en: "Beds" },
+          { key: "occupancy_pct", ar: "الإشغال %", en: "Occupancy %" },
+        ],
+        demoRows: [{"id": "d1", "name_ar": "مستشفى جامعي نموذجي", "governorate": "القاهرة", "bed_capacity": 420, "occupancy_pct": 83.5}],
+      }}
+    />
+  );
+}
