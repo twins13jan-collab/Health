@@ -1,0 +1,26 @@
+name: egypt_health_mobile
+description: >-
+  Egypt National Health System — mobile client (Catalog v6 rebuild).
+  Dart/Flutter app for facility staff: login, MPI patient search, and
+  operating-cycle tasks, over the same REST API as the web frontend.
+publish_to: "none"
+version: 6.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.1
+  flutter_secure_storage: ^9.2.2
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
