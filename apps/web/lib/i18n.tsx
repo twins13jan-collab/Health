@@ -1,0 +1,209 @@
+"use client";
+
+/**
+ * Minimal bilingual UI state: Arabic (RTL, default) <-> English (LTR).
+ * Client-side state only, persisted to localStorage, applied to <html>
+ * via `lang`/`dir` so the whole layout flips correctly.
+ */
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+
+export type Lang = "ar" | "en";
+
+const dict = {
+  appName: { ar: "المنظومة الوطنية لإدارة الأزمات الصحية والطوارئ الطبية", en: "National Health Crisis & Emergency System" },
+  dashboard: { ar: "مركز القيادة الوطني", en: "National Command Dashboard" },
+  patients: { ar: "سجل المرضى الموحد (MPI)", en: "Patient Registry (MPI)" },
+  encounters: { ar: "اللقاءات السريرية والفرز", en: "Clinical Encounters & Triage" },
+  cycles: { ar: "محرك دورات العمل", en: "Operating Cycle Engine" },
+  facilities: { ar: "سجل المنشآت الصحية", en: "Facilities Registry" },
+  login: { ar: "تسجيل الدخول", en: "Sign in" },
+  logout: { ar: "تسجيل الخروج", en: "Sign out" },
+  demoMode: { ar: "وضع العرض — الخادم الأساسي غير متاح، تُعرض بيانات تجريبية", en: "Demo mode — core API unreachable, showing demo data" },
+  search: { ar: "بحث", en: "Search" },
+  register: { ar: "تسجيل", en: "Register" },
+  status: { ar: "الحالة", en: "Status" },
+  actions: { ar: "إجراءات", en: "Actions" },
+  labs: { ar: "المختبرات والنتائج الحرجة", en: "Laboratories & Critical Results" },
+  pharmacy: { ar: "الصيدلة والمصالحة الدوائية", en: "Pharmacy & Medication Reconciliation" },
+  bloodBank: { ar: "بنك الدم", en: "Blood Bank" },
+  referrals: { ar: "الإحالات والتحويلات", en: "Referrals & Transfers" },
+  capacity: { ar: "لوحة السعة الوطنية", en: "National Capacity Board" },
+  billing: { ar: "الفوترة والمطالبات", en: "Billing & Claims" },
+  inventory: { ar: "المخزون والمشتريات", en: "Inventory & Procurement" },
+  appointments: { ar: "المواعيد والتطعيمات", en: "Appointments & Vaccinations" },
+  programs: { ar: "البرامج الوطنية (غسيل/أورام)", en: "National Programs (Dialysis/Oncology)" },
+  dispatch: { ar: "إرسال الإسعاف", en: "Ambulance Dispatch" },
+  quality: { ar: "الجودة وسلامة المرضى", en: "Quality & Patient Safety" },
+  workforce: { ar: "القوى العاملة والورديات", en: "Workforce & Rostering" },
+  governance: { ar: "الحوكمة والموافقات والبحث", en: "Governance, Consent & Research" },
+  radiology: { ar: "الأشعة والتصوير", en: "Radiology & Imaging" },
+  surgery: { ar: "الجراحة وقائمة WHO", en: "Surgery & WHO Checklist" },
+  icu: { ar: "العناية المركزة ومراقبة الأجهزة", en: "ICU & Device Monitoring" },
+  maternity: { ar: "الأمومة والحمل والولادة", en: "Maternity & Childbirth" },
+  neonatal: { ar: "حديثو الولادة والحضانات", en: "Newborn & NICU" },
+  rehab: { ar: "التأهيل الطبي والعلاج الطبيعي", en: "Rehabilitation & Therapy" },
+  mentalHealth: { ar: "الصحة النفسية والإدمان (سرية مشددة)", en: "Mental Health & Addiction (Strict Confidentiality)" },
+  palliative: { ar: "الرعاية التلطيفية وإدارة الألم", en: "Palliative Care & Pain" },
+  homeCare: { ar: "الرعاية المنزلية والتمريض المجتمعي", en: "Home Care & Community Nursing" },
+  dental: { ar: "طب الأسنان وصحة الفم", en: "Dentistry & Oral Health" },
+  toxicology: { ar: "مراكز السموم والتعرضات", en: "Poison Centres & Exposures" },
+  sensory: { ar: "العيون والسمع والأنف والأذن والحنجرة", en: "Eyes, Hearing & ENT" },
+  wounds: { ar: "الحروق والجروح والعناية بالأنسجة", en: "Burns, Wounds & Tissue Care" },
+  nutrition: { ar: "التغذية العلاجية والمعوية والوريدية", en: "Clinical Nutrition & Feeding" },
+  pathology: { ar: "علم الأمراض والأنسجة والخلايا", en: "Pathology & Histology" },
+  endoscopy: { ar: "المناظير والإجراءات التداخلية", en: "Endoscopy & Interventional" },
+  recalls: { ar: "الاستدعاء الدوائي والتشغيلات والمخزون", en: "Drug Recalls, Batches & Stock" },
+  securityIncidents: { ar: "الحوادث الأمنية والخصوصية", en: "Security & Privacy Incidents" },
+  nationalReports: { ar: "التقارير القومية والبيانات المفتوحة", en: "National Reports & Open Data" },
+  offlineSync: { ar: "العمل دون اتصال والمزامنة الآمنة", en: "Offline Work & Secure Sync" },
+  longitudinal: { ar: "السجل الصحي الطولي ومصالحة الهوية", en: "Longitudinal Record & Identity" },
+  masterData: { ar: "البيانات الرئيسية والكتالوجات المرجعية", en: "Master Data & Reference Catalogues" },
+  ledger: { ar: "الأستاذ العام والإقفال والمصالحة", en: "General Ledger & Closing" },
+  integrations: { ar: "التكاملات ومراقبة الرسائل", en: "Integrations & Message Monitoring" },
+  purchasing: { ar: "المشتريات والعقود والاستلام والموردون", en: "Procurement, Contracts & Suppliers" },
+  medicalAssets: { ar: "الأصول الطبية والصيانة والمعايرة", en: "Medical Assets, Maintenance & Calibration" },
+  complaints: { ar: "الشكاوى وحقوق المريض والاستئناف", en: "Complaints, Patient Rights & Appeals" },
+  clinicalAi: { ar: "الذكاء الاصطناعي السريري والتحقق البشري", en: "Clinical AI & Human Verification" },
+  documents: { ar: "الوثائق والتوقيع والاحتفاظ والأرشفة", en: "Documents, Signatures & Retention" },
+  oncology: { ar: "الأورام والعلاج الكيماوي والإشعاعي", en: "Oncology, Chemo & Radiotherapy" },
+  cardiology: { ar: "القلب والقسطرة والتداخلات الوعائية", en: "Cardiology, Cath & Vascular Interventions" },
+  stroke: { ar: "السكتة الدماغية والأعصاب الحادة", en: "Stroke & Acute Neurology" },
+  infectionControl: { ar: "مكافحة العدوى والعزل والترشيد", en: "Infection Control, Isolation & Stewardship" },
+  cssd: { ar: "التعقيم المركزي وإعادة معالجة الأدوات", en: "Central Sterilization (CSSD)" },
+  medicalWaste: { ar: "النظافة والبيئة والنفايات الطبية", en: "Hygiene, Environment & Medical Waste" },
+  facilitySafety: { ar: "الأمن والسلامة والحماية المدنية بالمنشأة", en: "Facility Security, Safety & Civil Protection" },
+  citizenPortal: { ar: "بوابة المواطن والتواصل متعدد القنوات", en: "Citizen Portal & Multi-Channel Communication" },
+  followUp: { ar: "المتابعة بعد الخروج واستمرارية العلاج", en: "Post-Discharge Follow-Up & Continuity" },
+  eligibility: { ar: "أهلية الخدمة قبل الحجز", en: "Service Eligibility Before Booking" },
+  unknownPatient: { ar: "المريض مجهول الهوية والحالات الإنسانية", en: "Unknown-Identity & Humanitarian Cases" },
+  organBank: { ar: "الأنسجة والأعضاء والخلايا والمنتجات الحيوية", en: "Tissues, Organs, Cells & Biological Products" },
+  clinicalTrials: { ar: "التجارب السريرية والابتكار الطبي", en: "Clinical Trials & Medical Innovation" },
+  porterage: { ar: "النقل الداخلي والخدمات الفندقية", en: "Internal Transport & Hotel Services" },
+  partnerships: { ar: "الشراكات ومقدمو الخدمات الخارجيون", en: "Partnerships & External Providers" },
+  medicalContent: { ar: "المحتوى الطبي والتثقيف الصحي", en: "Medical Content & Health Education" },
+  geoData: { ar: "البيانات الجغرافية والتحليل المكاني", en: "Geographic Data & Spatial Analysis" },
+  uxGovernance: { ar: "متطلبات المستخدمين وتجربة الاستخدام", en: "User Requirements & UX" },
+  serviceDesk: { ar: "مركز الخدمة والدعم الفني", en: "Service Centre & Technical Support" },
+  complexCare: { ar: "الحالات الصحية المعقدة", en: "Complex Health Cases" },
+  schoolHealth: { ar: "الصحة المدرسية والجامعية", en: "School & University Health" },
+  occupationalHealth: { ar: "صحة العاملين بالقطاعات عالية الخطورة", en: "High-Risk Sector Worker Health" },
+  portHealth: { ar: "الصحة بالمنافذ والحجر الصحي", en: "Port Health & Quarantine" },
+  medicationDelivery: { ar: "توصيل الأدوية للمريض", en: "Medication Delivery to the Patient" },
+  orgChange: { ar: "التغيير التنظيمي وتبني المنظومة", en: "Organizational Change & Adoption" },
+  hta: { ar: "تقييم التقنيات الصحية HTA", en: "Health Technology Assessment (HTA)" },
+  anomalyRegistry: { ar: "السجل القومي للتشوهات الخلقية", en: "National Congenital Anomalies Registry" },
+  proms: { ar: "نتائج وتجربة المريض PROMs/PREMs", en: "Patient-Reported Outcomes & Experience" },
+  tempWorkforce: { ar: "سوق الكوادر المؤقتة", en: "Temporary Workforce Marketplace" },
+  construction: { ar: "إنشاء المنشآت الصحية وتسليمها", en: "Facility Construction & Handover" },
+  digitalQuality: { ar: "جودة التجربة الرقمية", en: "Digital Experience Quality" },
+  nursing: { ar: "التمريض وخطط الرعاية", en: "Nursing & Care Plans" },
+  painSedation: { ar: "الألم والتخدير الإجرائي", en: "Pain & Procedural Sedation" },
+  forensics: { ar: "الطب الشرعي والتقارير القانونية", en: "Forensic Medicine & Medico-Legal Reports" },
+  labSafety: { ar: "سلامة المختبرات والأجهزة التشخيصية", en: "Laboratory & Device Safety" },
+  clinicalComms: { ar: "التواصل السريري وتسليم المعلومات الحرجة", en: "Clinical Communication & Critical Handover" },
+  deviceVigilance: { ar: "اليقظة للأجهزة الطبية", en: "Medical Device Vigilance" },
+  preventive: { ar: "الطب الوقائي والفحوص الجماعية", en: "Preventive Medicine & Mass Screening" },
+  donationCampaigns: { ar: "حملات التبرع بالدم", en: "Blood Donation Campaigns" },
+  socialServices: { ar: "الخدمات الاجتماعية والنفسية", en: "Social & Psychological Services" },
+  patientTransport: { ar: "نقل المرضى غير الطارئ", en: "Non-Emergency Patient Transport" },
+  hazmat: { ar: "الطوارئ البيئية والكيميائية والإشعاعية", en: "Environmental, Chemical & Radiological Emergencies" },
+  transferSafety: { ar: "سلامة النقل والتحويل بين المنشآت", en: "Interfacility Transfer Safety" },
+  majorIncidents: { ar: "الحوادث الكبرى والجاهزية المجتمعية", en: "Major Incidents & Community Readiness" },
+  disasterOps: { ar: "الكوارث والأزمات الصحية متعددة الجهات", en: "Multi-Agency Health Disasters & Crises" },
+  workforceHealth: { ar: "الصحة المهنية وسلامة العاملين", en: "Occupational Health & Worker Safety" },
+  envHealth: { ar: "خدمات الصحة البيئية والمناخية", en: "Environmental & Climate Health Services" },
+  continuity: { ar: "استمرارية الأعمال والتعافي التقني", en: "Business Continuity & Technical Recovery" },
+  accreditation: { ar: "الاعتماد والترخيص والتفتيش", en: "Accreditation, Licensing & Inspection" },
+  specialPopulations: { ar: "الخدمات الصحية للفئات والمواقع الخاصة", en: "Health Services for Special Populations & Sites" },
+  healthEquity: { ar: "العدالة الصحية وإتاحة الخدمة", en: "Health Equity & Service Access" },
+  ethicsCommittees: { ar: "اللجان الطبية والأخلاقيات", en: "Medical Committees & Ethics" },
+  legalCompliance: { ar: "المتطلبات القانونية ومصفوفة الامتثال", en: "Legal Requirements & Compliance Matrix" },
+  institutionalRisk: { ar: "المخاطر المؤسسية والقرارات", en: "Institutional Risk & Decisions" },
+  clinicalRiskMatrix: { ar: "مصفوفة المخاطر السريرية والدوائية", en: "Clinical & Medication Risk Matrix" },
+  decisionRegistry: { ar: "سجل القرارات القابلة للتتبع", en: "Traceable Decision Registry" },
+  clinicalCosting: { ar: "التكلفة السريرية ومسار المريض", en: "Clinical Costing & Patient Pathway" },
+  diseaseRegistries: { ar: "سجلات الأمراض والأبحاث الواقعية", en: "Disease Registries & Real-World Research" },
+  protocolQuality: { ar: "مراقبة الجودة السريرية للبروتوكولات", en: "Clinical Protocol Quality Monitoring" },
+  dataQuality: { ar: "جودة البيانات والتعاريف والمؤشرات", en: "Data Quality, Definitions & Indicators" },
+  facilitiesInfra: { ar: "المرافق والطاقة والبنية التحتية", en: "Facilities, Energy & Infrastructure" },
+  softwareLifecycle: { ar: "دورة حياة البرمجيات والإصدارات", en: "Software Lifecycle & Releases" },
+  clinicalForms: { ar: "النماذج والمستندات السريرية المنظمة", en: "Structured Clinical Forms & Documents" },
+  apiManagement: { ar: "واجهات البرمجة ومنتجات البيانات", en: "APIs & Data Products" },
+  mobileDevices: { ar: "تطبيقات المحمول والهوية الجهازية", en: "Mobile Apps & Device Identity" },
+  nfr: { ar: "المتطلبات غير الوظيفية", en: "Non-Functional Requirements" },
+  traceability: { ar: "مصفوفة الترابط بين الوحدات", en: "Inter-Module Traceability Matrix" },
+  facilityEstablishment: { ar: "الإنشاءات والتجهيز والترخيص والافتتاح", en: "Establishment, Equipping, Licensing & Opening" },
+  medicalTourism: { ar: "السياحة العلاجية والمرضى الدوليون", en: "Medical Tourism & International Patients" },
+  serviceCatalog: { ar: "التعريفات والكتالوجات الموحدة للخدمات", en: "Unified Definitions & Service Catalogs" },
+  observability: { ar: "المراقبة والشفافية التشغيلية", en: "Observability & Operational Transparency" },
+  orgLearning: { ar: "التعلم المؤسسي والمعرفة الإجرائية", en: "Organizational Learning & Procedural Knowledge" },
+  moduleSpecs: { ar: "نموذج توصيف واعتماد الوحدات", en: "Module Specification & Accreditation Model" },
+  governingRules: { ar: "القواعد العامة الحاكمة", en: "General Governing Rules" },
+  emergencyTriage: { ar: "الطوارئ والفرز والإنعاش", en: "Emergency, Triage & Resuscitation" },
+  patientSafety: { ar: "سلامة المرضى والتعلم من الحوادث", en: "Patient Safety & Learning from Incidents" },
+  radiologyDeep: { ar: "الأشعة والتصوير الطبي والتقارير", en: "Radiology, Medical Imaging & Reports" },
+  childHealth: { ar: "صحة الطفل والتطعيمات والنمو", en: "Child Health, Immunization & Growth" },
+  amrDeep: { ar: "مقاومة مضادات الميكروبات AMR", en: "Antimicrobial Resistance (AMR)" },
+  clinicalQuality: { ar: "الجودة السريرية والنتائج والمخاطر", en: "Clinical Quality, Outcomes & Risk" },
+  outpatientDeep: { ar: "العيادات الخارجية والرعاية التخصصية", en: "Outpatient Clinics & Specialist Care" },
+  admissionsDeep: { ar: "التنويم والدخول والتحويل والخروج", en: "Admission, Entry, Transfer & Discharge" },
+  chronicDeep: { ar: "الأمراض المزمنة والبرامج السكانية", en: "Chronic Diseases & Population Programmes" },
+  referralsDeep: { ar: "المواعيد الموحدة والإحالات وقوائم الانتظار", en: "Unified Appointments, Referrals & Waiting Lists" },
+  telemedicine: { ar: "التطبيب عن بعد والرعاية الرقمية", en: "Telemedicine & Digital Care" },
+  connectedDevices: { ar: "أجهزة القياس والمراقبة المتصلة", en: "Connected Measurement & Monitoring Devices" },
+  insuranceDeep: { ar: "التأمين الصحي والتغطيات والمطالبات", en: "Health Insurance, Coverage & Claims" },
+  hrDeep: { ar: "الموارد البشرية والرواتب والتدريب", en: "Human Resources, Payroll & Training" },
+  criticalCare: { ar: "الرعاية الحرجة والنقل بين مستويات الرعاية", en: "Critical Care & Transfer Between Care Levels" },
+  deathData: { ar: "بيانات الوفاة ومراجعتها", en: "Death Data & Review" },
+  protocolVersions: { ar: "إصدارات البروتوكولات والسياسات والقواعد السريرية", en: "Protocol, Policy & Clinical-Rule Versions" },
+  terminologyDeep: { ar: "التعريف الموحد للأحداث والمصطلحات", en: "Unified Event & Terminology Definitions" },
+  iamDeep: { ar: "الهوية والوصول المؤسسي IAM", en: "Institutional Identity & Access (IAM)" },
+  auditCompliance: { ar: "التدقيق والامتثال ومكافحة إساءة الاستخدام", en: "Audit, Compliance & Anti-Abuse" },
+  researchGovernance: { ar: "حوكمة البحث والبيانات الثانوية", en: "Research Governance & Secondary Data" },
+  supplyChainDeep: { ar: "سلاسل التوريد والمخاطر اللوجستية", en: "Supply Chains & Logistics Risk" },
+  multilingual: { ar: "تعدد اللغات وإتاحة الاستخدام", en: "Multilingual Support & Usability Access" },
+  transparencyDeep: { ar: "الشفافية والإفصاح العام", en: "Transparency & Public Disclosure" },
+  capabilityAccess: { ar: "اعتماد وإتاحة الخدمات حسب القدرة", en: "Service Accreditation & Availability by Capability" },
+  cycleVerification: { ar: "التحقق من اكتمال دورة الخدمة", en: "Service-Cycle Completeness Verification" },
+  refDataQuality: { ar: "جودة البيانات المرجعية والربط الدلالي", en: "Reference-Data Quality & Semantic Linking" },
+  openData: { ar: "حوكمة البيانات المفتوحة والإحصاءات", en: "Open-Data Governance & Statistics" },
+  vendorMonitoring: { ar: "مراقبة الموردين ومخاطر سلسلة الإمداد", en: "Vendor Monitoring & Supply-Chain Risk" },
+  facilityReadiness: { ar: "جاهزية المنشأة التشغيلية للخدمات", en: "Facility Operational Readiness for Services" },
+  journeys: { ar: "رحلات الرعاية المترابطة بين الوحدات", en: "Cross-Module Care Journeys" },
+  analytics: { ar: "التحليلات والتنبؤات الاستشارية", en: "Analytics & Advisory Forecasts" },
+  offline: { ar: "العمل دون اتصال والمزامنة", en: "Offline Work & Sync" },
+
+} as const;
+
+export type DictKey = keyof typeof dict;
+
+interface LangCtx {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  t: (k: DictKey) => string;
+}
+
+const Ctx = createContext<LangCtx>({ lang: "ar", setLang: () => {}, t: (k) => dict[k].ar });
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [lang, setLangState] = useState<Lang>("ar");
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("ehs.lang");
+    if (saved === "en" || saved === "ar") setLangState(saved);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    window.localStorage.setItem("ehs.lang", lang);
+  }, [lang]);
+
+  const setLang = (l: Lang) => setLangState(l);
+  const t = (k: DictKey) => dict[k][lang];
+  return <Ctx.Provider value={{ lang, setLang, t }}>{children}</Ctx.Provider>;
+}
+
+export function useLang(): LangCtx {
+  return useContext(Ctx);
+}
