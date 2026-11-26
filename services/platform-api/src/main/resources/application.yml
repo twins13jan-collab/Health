@@ -1,0 +1,26 @@
+spring:
+  application: { name: egypt-health-platform-api }
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/egypt_health}
+    username: ${SPRING_DATASOURCE_USERNAME:app_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:change-me}
+  jpa:
+    hibernate: { ddl-auto: validate }
+    open-in-view: false
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+      timeout: 2s
+  cache:
+    type: redis
+    redis: { time-to-live: 21600000, cache-null-values: false }
+  flyway: { enabled: true, locations: classpath:db/migration }
+server: { port: 8080 }
+management: { endpoints: { web: { exposure: { include: health,info,metrics } } } }
+app:
+  jwt-secret: ${JWT_SECRET:dev-only-secret-change-me-dev-only-secret-change-me-0123456789}
+  jwt-ttl-minutes: 60
+  analytics-ai-base-url: ${ANALYTICS_AI_BASE_URL:http://localhost:8000}
+  settings-key: ${APP_SETTINGS_KEY:}
+springdoc: { swagger-ui: { path: /swagger-ui.html } }

@@ -36,11 +36,14 @@ from .models import (
     CapacityForecastResponse,
     OutbreakForecastRequest,
     OutbreakForecastResponse,
+    ChatRequest,
+    ChatResponse,
     TriageSupportRequest,
     TriageSupportResponse,
 )
 from .services.amr import summarise_amr
 from .services.forecast import forecast_capacity, forecast_outbreak
+from .services.llm import agent_chat
 from .services.triage import score_news2
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
@@ -141,3 +144,16 @@ def amr_summary(req: AmrSummaryRequest):
           summary="NEWS2 triage support (advisory only) / دعم الفرز NEWS2 — استرشادي فقط")
 def triage_support(req: TriageSupportRequest):
     return score_news2(req)
+
+
+@app.post("/v1/ai/chat", tags=["clinical-ai"],
+          summary="Khattab assistant — local open-source LLM agent with live platform tools (advisory only)")
+def ai_chat(req: ChatRequest, request: Request):
+    body, status = agent_chat(
+        [m.model_dump() for m in req.messages],
+        authorization=request.headers.get("authorization"),
+        provider=req.provider.model_dump() if req.provider else None,
+    )
+    if status != 200:
+        return JSONResponse(status_code=status, content=body)
+    return body

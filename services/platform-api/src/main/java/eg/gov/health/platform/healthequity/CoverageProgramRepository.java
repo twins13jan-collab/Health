@@ -1,0 +1,3 @@
+package eg.gov.health.platform.healthequity;
+import org.springframework.data.jpa.repository.JpaRepository; import java.util.UUID;
+public interface CoverageProgramRepository extends JpaRepository<CoverageProgram, UUID> {}

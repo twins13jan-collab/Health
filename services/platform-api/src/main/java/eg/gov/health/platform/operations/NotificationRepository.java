@@ -1,0 +1,6 @@
+package eg.gov.health.platform.operations;
+import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; import java.util.UUID;
+public interface NotificationRepository extends JpaRepository<Notification, UUID> {
+  List<Notification> findByRecipientOrderByCreatedAtDesc(String recipient);
+  List<Notification> findByStatus(String status);
+}

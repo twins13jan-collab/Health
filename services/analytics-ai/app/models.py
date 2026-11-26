@@ -176,3 +176,36 @@ class TriageSupportResponse(BaseModel):
     red_flag_parameters: list[str]
     disclaimer: str
     disclaimer_ar: str
+
+
+# ---------------------------------------------------------------- ai chat
+class ChatMessage(BaseModel):
+    role: str = Field(pattern="^(user|assistant)$")
+    content: str = Field(min_length=1, max_length=4000)
+
+
+class ProviderConfig(BaseModel):
+    """External AI provider configuration, injected by the platform
+    proxy from the admin control panel — never sent by browsers."""
+    name: str
+    baseUrl: str
+    model: str
+    apiKey: str
+    authStyle: str = "bearer"
+
+
+class ChatRequest(BaseModel):
+    messages: list[ChatMessage] = Field(min_length=1, max_length=20)
+    provider: ProviderConfig | None = None
+
+
+class ChatResponse(BaseModel):
+    reply: str | None = None
+    providerUsed: str | None = None
+    toolsUsed: list[str] = []
+    model: str | None = None
+    advisory: bool = True
+    requiresHumanReview: bool = True
+    error: str | None = None
+    message: str | None = None
+    detail: str | None = None
