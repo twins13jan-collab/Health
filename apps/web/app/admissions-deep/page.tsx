@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "admissionsDeep",
         subtitleAr: "طلب تنويم بمبرر وأولوية قبول وتخصص مطلوب + قوائم انتظار أسرة وتحويل بين أقسام ومنشآت بقبول الجهة المستقبلة + تقييم دخول وخطة رعاية يومية ومراجعة ملاءمة مستوى رعاية + تخطيط خروج مبكر وملخص بتشخيصات وإجراءات وتعليمات وتحذيرات وأدوية ومتابعة — وملخص بلا تحذيرات يرسل المريض بيته أعزل، وخروج ضد النصيحة بشرح مخاطر وتوقيع",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "specialty", ar: "التخصص", en: "Specialty" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ad1", "patientRef": "P-771", "specialty": "باطنة", "status": "requested" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "deviceVigilance",
         subtitleAr: "بلاغات أعطال وأضرار أجهزة بتقييم خطورة وإبلاغ تنظيمي واجب للحالات الخطيرة لا يُغلق الملف قبل إرساله + تصحيح ميداني وحجر واستدعاء يخرج الجهاز من الخدمة في سجل التتبع + كل حادث مرتبط بصيانته ودفعته واحتياج التدريب الذي كشفه",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "severity", ar: "الخطورة", en: "Severity" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "dv1", "deviceRef": "مضخة محاليل", "severity": "serious", "status": "assessed" }],
       }}
     />
   );

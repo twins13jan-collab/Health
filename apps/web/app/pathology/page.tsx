@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "pathology",
         subtitleAr: "الهوية لا تُخمن أبدًا: عينة غير موثقة تُحجر + أولي ليس نهائيًا والنهائي موقع + تقرير معتمد لا يُحرر بل يُضاف إليه بإصدار يخطر المستلمين السابقين + رأيان محفوظان معًا",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "urgency", ar: "الاستعجال", en: "Urgency", status: true },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "pa1", "specimenType": "خزعة قولون", "site": "القولون الصاعد", "urgency": "urgent", "status": "reported" }],
       }}
     />
   );

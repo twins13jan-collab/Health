@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "nationalReports",
         subtitleAr: "كل مؤشر قابل لإعادة الحساب وله مالك ومصدر ووقت قطع وتغطية + تأخر منشأة يظهر كنسبة تغطية ولا يعمم الرقم على الدولة + تغيير التعريف إصدار جديد بتحذير مقارنة + أعداد صغيرة مكبوحة",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "approvedBy", ar: "اعتماد", en: "Approved by" },
           { key: "publishedAt", ar: "نشر في", en: "Published at" },
         ],
-        demoRows: [{ "id": "nr1", "aggregationLevel": "محافظة", "license": "CC-BY", "approvedBy": "الجهة القومية", "publishedAt": "2026-11-20" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "patientTransport",
         subtitleAr: "طلبات نقل للغسيل والعلاج والتأهيل باحتياجات كرسي أو نقالة أو أكسجين محددة + جدولة بمزودين موثقين ترخيصهم سارٍ يوم الرحلة وقدرتهم تطابق الحاجة + إتمام وتأخير وشكاوى موثقة لكل رحلة — تأخير متكرر نمط يُراجع لا حكاية",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "purpose", ar: "الغرض", en: "Purpose" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "pt1", "patientRef": "P-701", "purpose": "dialysis", "status": "scheduled" }],
       }}
     />
   );

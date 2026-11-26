@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "construction",
         subtitleAr: "دراسة احتياج وخريطة صحية واعتماد تصميم طبي وتصميم مكافحة عدوى قبل أي إنشاء — مكافحة العدوى تراجع الرسومات لا الجدران المنتهية + أوامر تغيير لا تُطبق إلا معتمدة + التسليم بنجاح تشغيل كل الأنظمة الحرجة واستلام الأصول والوثائق والتراخيص: فشل الغازات الطبية مستشفى لا يفتح",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "location", ar: "الموقع", en: "Location" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "cp1", "name": "مستشفى مركزي جديد", "location": "أسيوط", "status": "construction" }],
       }}
     />
   );

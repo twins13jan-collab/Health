@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "facilitiesInfra",
         subtitleAr: "مبانٍ وغرف وأنظمة كهروميكانيكية وغازات طبية بمراقبة طاقة ومياه ووقود وتبريد وتهوية وجودة هواء وضغط وحرارة + صيانة وأوامر عمل: أمر حرج لنظام حرج لا يُغلق بلا خطة بديل قائمة وقراءة ما بعد إصلاح داخل الحدود — فالإصلاح الورقي لا يعيد الأكسجين",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "systemType", ar: "النوع", en: "Type" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "fi1", "name": "محطة الغازات الطبية", "systemType": "medical_gas", "status": "operational" }],
       }}
     />
   );

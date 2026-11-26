@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "auditCompliance",
         subtitleAr: "خطط تدقيق وأدلة وملاحظات لا تُغلق إلا بدليل وإجراء تصحيحي وإغلاق موثق + تعارض مصالح وإفصاحات قبل التصرف في قرارات ذات صلة + إشارات احتيال دون أحكام آلية: الإشارة تبقى إشارة حتى يسجل إنسان نتيجتها + قضايا امتثال وإجراءات تصحيحية وحماية سجلات تدقيق بفصل عن التشغيل وطلبات جهات رقابية وإفصاح حوادث أمنية وخصوصية",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "severity", ar: "الخطورة", en: "Severity" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ac1", "auditRef": "تدقيق مخزون 2026", "severity": "high", "status": "open" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "clinicalRiskMatrix",
         subtitleAr: "مخاطر هوية ودواء وجرعة وإجراء ونتائج حرجة وتأخير ونقل وتسليم وانقطاع أجهزة — كل خطر بثلاث طبقات ضوابط: منع وكشف واستجابة، ونقص طبقة يعني خطرًا مفتوحًا + مراجعة إنذارات كاذبة وإرهاق تنبيه: تنبيه يخطئ أكثر من نصف المرات على عينة حقيقية يذهب للمراجعة فالإنذار المتجاهل لا يحمي أحدًا",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "hazardDomain", ar: "المجال", en: "Domain" },
           { key: "severity", ar: "الشدة", en: "Severity" },
         ],
-        demoRows: [{ "id": "mx1", "title": "تشابه أسماء أدوية عالية الخطورة", "hazardDomain": "medication", "severity": 5 }],
       }}
     />
   );

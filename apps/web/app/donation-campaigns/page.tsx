@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "donationCampaigns",
         subtitleAr: "حملات تبرع بمواقع وطاقة + أهلية متبرع تُفحص يومها وفاصل 90 يومًا لا يُكسر مهما فرغت الأرفف + نتائج تفاعلية تُبلَّغ للمتبرع بسرية مع إحالة ولا تظهر في تقارير الحملة + توزيع وحدات ضد الطلب وفي حدود المجمع فعليًا",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "site", ar: "الموقع", en: "Site" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "dc1", "name": "حملة الجامعة", "site": "ساحة الجامعة", "status": "running" }],
       }}
     />
   );

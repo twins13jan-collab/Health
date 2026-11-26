@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "healthEquity",
         subtitleAr: "قياس توزيع الخدمات والموارد مقابل السكان والاحتياج والعبء المرضي معًا — منطقة بضعف العبء تحتاج ضعف الخدمة لتتساوى + تحليل فجوات وصول بموقع وعمر ونوع وإعاقة وعوامل اجتماعية بعينات آمنة الخصوصية (دون 30 تُحجب) + برامج تغطية لمناطق نائية ومحرومة وعيادات متنقلة لا تُغلق قبل قياس يُظهر الفجوة عند هدفها",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "population", ar: "السكان", en: "Population" },
           { key: "serviceUnits", ar: "وحدات الخدمة", en: "Service units" },
         ],
-        demoRows: [{ "id": "he1", "region": "شمال سيناء", "population": 450000, "serviceUnits": 38 }],
       }}
     />
   );

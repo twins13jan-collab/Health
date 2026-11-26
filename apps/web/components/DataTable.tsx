@@ -6,7 +6,7 @@ export interface Column<T> {
   render: (row: T) => ReactNode;
 }
 
-/** Generic, typed data table used by every registry page. */
+/** Generic typed data table — zebra rows, sticky header, hover. */
 export default function DataTable<T extends { id: string }>({
   columns,
   rows,
@@ -18,8 +18,8 @@ export default function DataTable<T extends { id: string }>({
 }) {
   if (!rows.length) return <div className="empty">{emptyText}</div>;
   return (
-    <div className="table-wrap">
-      <table className="data-table">
+    <div className="tbl-wrap">
+      <table className="tbl">
         <thead>
           <tr>
             {columns.map((c) => (

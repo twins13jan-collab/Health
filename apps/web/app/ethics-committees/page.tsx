@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "ethicsCommittees",
         subtitleAr: "تشكيل لجان واختصاصاتها ومراجعة حالات تعارض أخلاقي وتقنيات وذكاء اصطناعي وأبحاث وبروتوكولات عالية المخاطر + قرار لا يصح بلا نصاب + تصويت فقط لمن أعلن تضارب مصالحه — صوت بمصلحة غير معلنة يلوث القرار + تنحٍّ موثق لا مهموس",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "mandate", ar: "الاختصاص", en: "Mandate" },
           { key: "quorumRequired", ar: "النصاب", en: "Quorum" },
         ],
-        demoRows: [{ "id": "ec1", "name": "لجنة الأخلاقيات الطبية", "mandate": "مراجعة الحالات والبروتوكولات عالية المخاطر", "quorumRequired": 4 }],
       }}
     />
   );

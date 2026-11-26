@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "disasterOps",
         subtitleAr: "غرفة عمليات قومية ومراكز محافظات ومنشآت + تصنيف حدث قبل تفعيل الخطط — الاستجابة بحجم التصنيف لا الضجيج + صورة موقف موحدة: إصابات وأسرة وفرق ومخزون وطرق + موارد تُطلب وتُخصص بقرار موثق بسند صلاحية وتُسلَّم ضده + لا إغلاق وطلب لم يُسلَّم",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "classification", ar: "التصنيف", en: "Classification" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "do1", "name": "فيضان موسمي", "classification": 2, "status": "responding" }],
       }}
     />
   );

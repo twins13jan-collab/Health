@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "partnerships",
         subtitleAr: "سجل جهات ومقاولين ومقدمي خدمات + العقد لا ينشط إلا بشروط خصوصية وأمن ونطاق وصول وغرض ومدة صالحة + منح الوصول محددة الغرض والمدة وتحت عقد نشط فقط + إنهاء العلاقة يلغي كل الوصول فورًا + مراجعة أداء وحوادث وتدقيق ضد مستوى الخدمة وتضارب المصالح وتغير الملكية على السجل",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "partnerType", ar: "النوع", en: "Type" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "pn1", "name": "شركة صيانة أجهزة", "partnerType": "contractor", "status": "active" }],
       }}
     />
   );

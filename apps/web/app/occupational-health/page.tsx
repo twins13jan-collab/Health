@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "occupationalHealth",
         subtitleAr: "برامج فحص ومراقبة مهنية للعاملين بالقطاعات عالية الخطورة: تعرضات مواد وضوضاء وحرارة وإشعاع + اللياقة محسوبة: فحص دوري متأخر أو حادث تعرض بلا فحص لاحق يزيل التصريح + تقرير جهة العمل بحدود إفصاح — لياقة وقيود فقط، التشخيص لا يخرج أبدًا",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "sector", ar: "القطاع", en: "Sector" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "oh1", "workerCode": "WRK-501", "sector": "radiology", "status": "active" }],
       }}
     />
   );

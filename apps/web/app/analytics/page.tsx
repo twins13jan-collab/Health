@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { PageHead } from "@/components/ui";
 import { API_BASE_URL, getToken } from "@/lib/api";
 
 type Capacity = { current_occupancy_pct?: number; days_to_full?: number | null; risk_level_ar?: string; factors_ar?: string[]; advisory_only?: boolean };
@@ -42,29 +43,38 @@ export default function AnalyticsPage() {
   useEffect(() => { run(); }, []);
 
   return (
-    <main style={{ padding: 24, maxWidth: 900 }}>
-      <h1>التحليلات والتنبؤات الاستشارية</h1>
-      <p>تنبؤات خدمة الذكاء والتحليلات (Python/FastAPI) عبر منصة التشغيل — <strong>استشارية فقط</strong> وتتطلب مراجعة بشرية قبل أي قرار.</p>
-      <button onClick={run} disabled={busy} style={{ padding: "8px 18px", marginBottom: 16 }}>{busy ? "جارٍ الحساب..." : "إعادة الحساب"}</button>
-      {error && <p style={{ color: "#b00" }}>{error}</p>}
-      {capacity && (
-        <section style={{ border: "1px solid #ccc", borderRadius: 8, padding: 16, marginBottom: 16 }}>
-          <h2>تنبؤ سعة العناية المركزة</h2>
-          <p>الإشغال الحالي: <strong>{capacity.current_occupancy_pct}%</strong></p>
-          <p>أيام حتى الامتلاء: <strong>{capacity.days_to_full ?? "—"}</strong></p>
-          <p>مستوى الخطر: <strong>{capacity.risk_level_ar}</strong></p>
-          <ul>{(capacity.factors_ar ?? []).map((f, i) => <li key={i}>{f}</li>)}</ul>
-        </section>
-      )}
-      {outbreak && (
-        <section style={{ border: "1px solid #ccc", borderRadius: 8, padding: 16 }}>
-          <h2>تنبؤ تفشي — القاهرة (أعراض شبيهة بالإنفلونزا)</h2>
-          <p>اتجاه المنحنى: <strong>{outbreak.trend_direction}</strong></p>
-          <p>معدل النمو: <strong>{outbreak.growth_rate_pct ?? "—"}%</strong></p>
-          <p>مستوى الخطر: <strong>{outbreak.risk_level_ar}</strong></p>
-          <ul>{(outbreak.factors_ar ?? []).map((f, i) => <li key={i}>{f}</li>)}</ul>
-        </section>
-      )}
-    </main>
+    <>
+      <PageHead
+        eyebrow="التحليلات"
+        title="التحليلات والتنبؤات الاستشارية"
+        sub={<>تنبؤات خدمة الذكاء والتحليلات (Python/FastAPI) عبر منصة التشغيل — <strong>استشارية فقط</strong> وتتطلب مراجعة بشرية قبل أي قرار.</>}
+        actions={<button onClick={run} disabled={busy} className="btn">{busy ? "جارٍ الحساب..." : "إعادة الحساب"}</button>}
+      />
+      {error && <div className="alert-error">{error}</div>}
+      <div className="grid-2">
+        {capacity && (
+          <section className="card">
+            <h2>تنبؤ سعة العناية المركزة</h2>
+            <div className="kpi-grid flush">
+              <div className="kpi"><div className="kpi-label">الإشغال الحالي</div><div className="kpi-value">{capacity.current_occupancy_pct}%</div></div>
+              <div className="kpi"><div className="kpi-label">أيام حتى الامتلاء</div><div className="kpi-value">{capacity.days_to_full ?? "—"}</div></div>
+              <div className="kpi"><div className="kpi-label">مستوى الخطر</div><div className="kpi-value">{capacity.risk_level_ar}</div></div>
+            </div>
+            <ul className="clean mt">{(capacity.factors_ar ?? []).map((f, i) => <li key={i}>{f}</li>)}</ul>
+          </section>
+        )}
+        {outbreak && (
+          <section className="card">
+            <h2>تنبؤ تفشي — القاهرة (أعراض شبيهة بالإنفلونزا)</h2>
+            <div className="kpi-grid flush">
+              <div className="kpi"><div className="kpi-label">اتجاه المنحنى</div><div className="kpi-value">{outbreak.trend_direction}</div></div>
+              <div className="kpi"><div className="kpi-label">معدل النمو</div><div className="kpi-value">{outbreak.growth_rate_pct ?? "—"}%</div></div>
+              <div className="kpi"><div className="kpi-label">مستوى الخطر</div><div className="kpi-value">{outbreak.risk_level_ar}</div></div>
+            </div>
+            <ul className="clean mt">{(outbreak.factors_ar ?? []).map((f, i) => <li key={i}>{f}</li>)}</ul>
+          </section>
+        )}
+      </div>
+    </>
   );
 }

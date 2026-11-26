@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "mentalHealth",
         subtitleAr: "سرية مشددة: الوصول لفريق العلاج فقط وكل قراءة مسجلة + التشخيص لا يظهر في القوائم أبدًا + خطر وشيك يفعّل بروتوكول السلامة وخطة سلامة إلزامية عند الخطر المرتفع",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "urgency", ar: "الاستعجال", en: "Urgency", status: true },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "mh1", "referral_reason": "تقييم اكتئاب", "urgency": "urgent", "status": "in_treatment" }],
       }}
     />
   );

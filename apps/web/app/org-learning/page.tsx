@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "orgLearning",
         subtitleAr: "مكتبة موحدة لسياسات وإجراءات وأدلة تشغيل وتعليمات سريرية وإدارية، كل وثيقة بمالك وإصدار وسريان ومراجعة ومستفيدين — والوثيقة منتهية المراجعة خطر بزي رسمي، والقراءة ليست فهمًا: الإقرار لا يحسب إلا بتقييم استيعاب، والدرس المستفاد لا يغلق إلا مطبقًا في وثيقة حية",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "ownerRef", ar: "المالك", en: "Owner" },
           { key: "version", ar: "الإصدار", en: "Version" },
         ],
-        demoRows: [{ "id": "ol1", "title": "دليل الإخلاء عند الحريق", "ownerRef": "إدارة السلامة", "version": "v3" }],
       }}
     />
   );

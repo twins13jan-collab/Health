@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "mobileDevices",
         subtitleAr: "تسجيل أجهزة وربطها بمستخدم ومنشأة كهوية جهازية + جلسات وتشفير وتحديثات وإبطال: غير المشفر لا يحمل جلسة ودون الحد المدعوم يُحدّث أولًا + مسح آمن عند فقد أو انتهاء تفويض بسبب مشروع فقط + إشعارات بتأكيد استلام وضبط كاميرا وباركود وموقع وملفات",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "userRef", ar: "المستخدم", en: "User" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "md1", "deviceRef": "TAB-ICU-07", "userRef": "ممرضة عناية", "status": "active" }],
       }}
     />
   );

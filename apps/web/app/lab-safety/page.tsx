@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "labSafety",
         subtitleAr: "تقييم مخاطر قبل إدخال أي اختبار وتحقق من الدقة والحساسية والتداخلات ومقارنة نتائج بين الأجهزة ضمن ±10% + دفعات كواشف بصلاحية — المنتهية خطر لا كاشف + عطل أي جهاز يوقف خدمته حتى يُقيَّم أثره على النتائج السابقة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "analyzer", ar: "الجهاز", en: "Analyzer" },
           { key: "approved", ar: "معتمد", en: "Approved" },
         ],
-        demoRows: [{ "id": "ls1", "testName": "تروبونين عالي الحساسية", "analyzer": "Analyzer-X2", "approved": true }],
       }}
     />
   );

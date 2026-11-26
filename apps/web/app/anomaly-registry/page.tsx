@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "anomalyRegistry",
         subtitleAr: "سجل قومي بتعريفات حالات ومصادر إبلاغ موحدة وربط حمل وولادة ومولود وفق الصلاحيات + المؤكد والمشتبه لا يُدمجان في الأرقام المنشورة أبدًا + تحليل اتجاهات يصف الأنماط دون استنتاج سببي غير مدعوم + إحالة الأسر للوراثة والتأهيل",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "anomalyCode", ar: "التشوه", en: "Anomaly" },
           { key: "classification", ar: "التصنيف", en: "Class" },
         ],
-        demoRows: [{ "id": "ar1", "caseCode": "CA-2026-001", "anomalyCode": "Q21.0", "classification": "confirmed" }],
       }}
     />
   );

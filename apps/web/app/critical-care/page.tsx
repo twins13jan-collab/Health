@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "criticalCare",
         subtitleAr: "معايير قبول ونقل وخروج من العناية + تقييم متعدد التخصصات ودعم أعضاء + أجهزة وأدوية عالية الخطورة + نقل مريض حرج بفريق وتجهيزات مناسبة وتسليم حالة ومراجعة استقرار — والنقل يقف على أربعة شروط معًا: معايير مستوفاة واستقرار مراجع وفريق مجهز وتسليم موثق؛ سرير شاغر حقيقة لوجستية لا قرار سريري",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "toLevel", ar: "إلى مستوى", en: "To level" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "cc1", "patientRef": "P-118", "toLevel": "عناية مركزة", "status": "planned" }],
       }}
     />
   );

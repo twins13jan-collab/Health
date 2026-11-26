@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "radiologyDeep",
         subtitleAr: "طلب فحص بمبرر وأولوية وموانع مفحوصة + تحضير وتباين ومخاطر كلى: الصبغة قرار كلى قبل قرار صورة، ودون eGFR 30 تحتاج تجاوز كلى موثقًا + قوائم عمل أجهزة وتقارير أولية ونهائية وتصحيح يحل محلًا لا تحريرًا + نتائج حرجة باستلام موثق من مستقبل مسمى وربط DICOM/PACS وجرعات إشعاع وفحوص متكررة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "exam", ar: "الفحص", en: "Exam" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "rd1", "patientRef": "P-881", "exam": "أشعة مقطعية بطن بالصبغة", "status": "ordered" }],
       }}
     />
   );

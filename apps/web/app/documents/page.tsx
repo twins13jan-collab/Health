@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "documents",
         subtitleAr: "كل وثيقة بمالك وتصنيف وإصدار وبصمة ومصدر + توقيع بشهادة غير صالحة لا يعد اعتمادًا + تعديل بعد التوقيع ينشئ إصدارًا جديدًا ولا يرث التوقيع + سجل محمي بحفظ قانوني أو التزام احتفاظ لا يحذف أبدًا + كل عرض وطباعة وتنزيل ومشاركة مسجل بغرضه",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "currentVersion", ar: "الإصدار", en: "Version" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "dc1", "docType": "تقرير طبي", "title": "تقرير خروج", "currentVersion": 2, "status": "approved" }],
       }}
     />
   );

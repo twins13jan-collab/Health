@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "clinicalTrials",
         subtitleAr: "سجل تجارب ومراكز وباحثين وبروتوكولات + لا توظيف قبل موافقة الأخلاقيات والتنظيم وإعلان تضارب المصالح + المشارك بكود فقط وفصل بيانات البحث عن العلاج + أهلية وموافقة موثقة قبل أي زيارة أو عينة + الانسحاب فوري + الحدث الضار الخطير غير المبلَّغ للأخلاقيات خرق ظاهر",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "phase", ar: "المرحلة", en: "Phase" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ct1", "title": "دراسة دواء ضغط جديد", "phase": "III", "status": "recruiting" }],
       }}
     />
   );

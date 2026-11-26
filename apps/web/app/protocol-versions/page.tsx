@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "protocolVersions",
         subtitleAr: "بروتوكولات علاجية حسب تخصص وحالة وفئة عمرية ومحددات استخدام + مرجع علمي وجهة مالكة ولجنة معتمدة وتواريخ إصدار وسريان ومراجعة: الإصدار لا يسري إلا مكتملًا + تعديلات وتعليقات وموافقات واستثناءات وسحب إصدار قديم + ربط كل جلسة وإجراء وجرعة وقرار بالإصدار المستخدم وسجل يجيب أي بروتوكول حكم خدمة سابقة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "version", ar: "الإصدار", en: "Version" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "pv1", "code": "ACS-01", "version": "3.2", "status": "active" }],
       }}
     />
   );

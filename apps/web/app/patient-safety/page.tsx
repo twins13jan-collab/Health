@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "patientSafety",
         subtitleAr: "تصنيف حوادث ووقائع وشيكة + إبلاغ سري وحماية مبلغين — هوية مكشوفة صمت مشترى + إخطار مريض متضرر وفق السياسة والقانون + تحليل أسباب نظامية وبشرية + خطط منع تكرار وقياس أثر: الحادث لا يغلق قبل الإخطار والتحليل واكتمال كل إجراءات المنع",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "severity", ar: "الخطورة", en: "Severity" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ps1", "incidentType": "near_miss", "severity": "moderate", "status": "reported" }],
       }}
     />
   );

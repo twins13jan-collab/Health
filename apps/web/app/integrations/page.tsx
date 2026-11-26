@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "integrations",
         subtitleAr: "كل رسالة تتبع حتى ACK أو فشل نهائي وHTTP 200 ليس إثبات معنى + تكرار يمنع بمفتاح عدم التكرار + رسالة غير صالحة تعزل + فشل يتصاعد إلى رسائل ميتة ومصالحة + إصدار مورد جديد لا يفعل قبل اختبار توافق",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "destination", ar: "الوجهة", en: "Destination" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "in1", "messageId": "MSG-8841", "sourceSystem": "معمل خارجي", "destination": "المنصة", "status": "quarantined" }],
       }}
     />
   );

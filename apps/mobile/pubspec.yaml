@@ -4,7 +4,7 @@ description: >-
   Dart/Flutter app for facility staff: login, MPI patient search, and
   operating-cycle tasks, over the same REST API as the web frontend.
 publish_to: "none"
-version: 6.0.0+1
+version: 6.0.2+3
 
 environment:
   sdk: ">=3.3.0 <4.0.0"

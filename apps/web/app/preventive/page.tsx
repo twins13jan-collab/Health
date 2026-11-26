@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "preventive",
         subtitleAr: "برامج فحص جماعي بدعوات وموافقات ومواعيد للمؤهلين فقط + نتيجة إيجابية ليست تشخيصًا: تفتح مسارًا تأكيديًا وإحالة لا يُغلق قبل اكتمالهما + متابعة عدم الحضور وإعادة دعوة + تغطية محسوبة من الحضور الفعلي",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "targetCondition", ar: "الحالة المستهدفة", en: "Target condition" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "pv1", "name": "فحص السكري المجتمعي", "targetCondition": "السكري", "status": "active" }],
       }}
     />
   );

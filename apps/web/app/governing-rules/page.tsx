@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "governingRules",
         subtitleAr: "دستور المنظومة مطبقًا على نفسه: عزلة بلا استثناء، وكل سجل حساس بمصدر ومالك وتدقيق، وكل تكامل بهوية موثقة وإيقاف ومراجعة، وكل قاعدة سريرية بإصدار ومصدر واعتماد وسريان، وكل ذكاء استشاري والقرار للمختص، وكل مشاركة بيانات بغرض وأساس وحد أدنى — والامتثال لا يتحقق إلا بدليل وفحص مستقل: لا اكتمال يُعلن بلا أدلة",
@@ -13,7 +13,6 @@ export default function Page() {
           { key: "ruleCode", ar: "الرمز", en: "Code" },
           { key: "title", ar: "القاعدة", en: "Rule" },
         ],
-        demoRows: [{ "id": "gr1", "ruleCode": "ISOLATION", "title": "العزلة متعددة المنشآت والمحافظات دون استثناء" }],
       }}
     />
   );

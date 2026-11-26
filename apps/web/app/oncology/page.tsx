@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "oncology",
         subtitleAr: "كل دورة مرتبطة بإصدار بروتوكول معتمد طبيًا وسارٍ — ووجود البروتوكول بالنظام لا يعني اعتماده + النظام لا يولد جرعة أبدًا بل يسجل ما اعتمده الاستشاري + تحقق مستقل قبل التحضير والإعطاء ويعلق عند خروج الوزن أو التحاليل عن الشروط + دواء مستدعى يمنع الصرف والبديل بقرار طبي + السمية تقرر الاستمرار أو التعديل أو الإيقاف",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "stage", ar: "المرحلة", en: "Stage" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "on1", "tumorType": "سرطان ثدي", "stage": "IIB", "status": "on_treatment" }],
       }}
     />
   );

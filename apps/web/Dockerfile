@@ -19,6 +19,10 @@ RUN addgroup --system --gid 1001 nodejs \
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/next.config.mjs ./next.config.mjs
 COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+# Uploaded asset files can arrive with restrictive modes (660); the runtime
+# user (nextjs) must be able to read everything under public/.
+RUN chmod -R a+rX /app/public
 COPY --from=builder /app/node_modules ./node_modules
 USER nextjs
 EXPOSE 3000

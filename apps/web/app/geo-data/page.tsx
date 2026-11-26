@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "geoData",
         subtitleAr: "حدود إدارية ومواقع منشآت بإحداثيات موثقة ودقة معلنة وتاريخ تحقق — والتحقق الأقدم من عام يظهر قديمًا + نطاقات تغطية وإحالة وخدمات متنقلة + تحليل زمن وصول على شبكة طرق موثوقة + المسافة الخطية لا تُعرض أبدًا باعتبارها زمنًا فعليًا",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "district", ar: "الحي/المركز", en: "District" },
           { key: "accuracyM", ar: "الدقة (م)", en: "Accuracy (m)" },
         ],
-        demoRows: [{ "id": "gd1", "name": "مستشفى الاختبار المركزي", "district": "مدينة نصر", "accuracyM": 5 }],
       }}
     />
   );

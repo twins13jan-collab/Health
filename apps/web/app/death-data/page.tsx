@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "deathData",
         subtitleAr: "تسجيل وفاة بتوقيت ومكان ومصدر + أسباب وفاة بترميز معتمد ومصدقة قبل أي ربط إحصائي رسمي + مراجعة وفيات ومؤشرات قابلة للتجنب + تصحيح تعارضات بسجل تاريخي: الحقل والقيمة القديمة والجديدة والسبب، فالسجل لا يُكتب فوقه بصمت أبدًا + حماية بيانات المتوفى والأسرة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "causeCode", ar: "سبب الوفاة (مرمز)", en: "Cause (coded)" },
           { key: "statisticsLinked", ar: "رُبط إحصائيًا", en: "Statistics linked" },
         ],
-        demoRows: [{ "id": "dd1", "deceasedRef": "D-2041", "causeCode": "I21.9", "statisticsLinked": true }],
       }}
     />
   );

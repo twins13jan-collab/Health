@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "childHealth",
         subtitleAr: "سجل طفل ونمو وتغذية وتطور + جداول تطعيم وجرعات متأخرة واستدراك + سلسلة تبريد وتشغيلات: جرعة من سلسلة منكسرة ليست جرعة وتُعاد + أحداث تالية للتطعيم تُحقق قبل جرعة اللقاح نفسه التالية + كشف مبكر عن إعاقات واضطرابات نمائية وبرامج تغذية ومكافحة سوء تغذية ومتابعة مزمنين واحتياجات معقدة",
@@ -13,7 +13,6 @@ export default function Page() {
           { key: "childRef", ar: "الطفل", en: "Child" },
           { key: "birthDate", ar: "تاريخ الميلاد", en: "Birth date" },
         ],
-        demoRows: [{ "id": "ch1", "childRef": "CH-2026-311", "birthDate": "2026-09-14" }],
       }}
     />
   );

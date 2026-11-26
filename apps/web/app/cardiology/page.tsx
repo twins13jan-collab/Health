@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "cardiology",
         subtitleAr: "مسارات ألم الصدر بساعات موثقة من الباب إلى البالون وهدف 90 دقيقة يوسم تجاوزه + لا قسطرة قبل اكتمال تجهيز المريض والفريق والموافقات + الدعامات والأجهزة المزروعة برقم تسلسلي مرتبط بالتكلفة والمطالبة + متابعة النزيف والكلى واضطراب النظم",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "pathway", ar: "المسار", en: "Pathway" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ca1", "patientRef": "P-300", "ecgFinding": "STEMI", "pathway": "primary_pci", "status": "completed" }],
       }}
     />
   );

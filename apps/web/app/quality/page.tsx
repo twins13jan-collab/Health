@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "quality",
         subtitleAr: "بلاغات سلامة لا تُغلق قبل سبب جذري وإجراء تصحيحي + شكاوى بآجال SLA",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "severity", ar: "الخطورة", en: "Severity" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "category": "fall", "severity": "moderate", "status": "under_review"}, {"id": "d2", "category": "medication", "severity": "near_miss", "status": "action_assigned"}],
       }}
     />
   );

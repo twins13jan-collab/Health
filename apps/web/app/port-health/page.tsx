@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "portHealth",
         subtitleAr: "بلاغات صحية للمسافرين وتقييم مخاطر وفحوص وعزل وإحالة بالمنافذ + عالي الخطورة بأعراض يُعزل أو يُحال ولا يُخلى سبيله أبدًا + الحجر بأساس قانوني وإفراجه المبكر بمخول وسبب موثق + بيانات رحلات بالحد الأدنى وتنسيق موثق مع جهات المنفذ",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "travelRef", ar: "الرحلة", en: "Travel Ref" },
           { key: "riskLevel", ar: "الخطورة", en: "Risk" },
         ],
-        demoRows: [{ "id": "ph1", "travelerCode": "TRV-88", "travelRef": "MS-986", "riskLevel": "high" }],
       }}
     />
   );

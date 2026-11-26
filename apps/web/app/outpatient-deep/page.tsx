@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "outpatientDeep",
         subtitleAr: "دورة زيارة من طلب وتحقق هوية وأهلية حتى فرز وكشف وخطة علاجية وإغلاق + جدولة حسب تخصص وطبيب وغرفة وتجهيز وطاقة فعلية + زيارات حضورية وافتراضية ومنزلية وهاتفية + قوائم انتظار وتأخير وإلغاء وعدم حضور وإعادة جدولة — والزيارة لا تغلق بلا مسؤول متابعة مسمى، ومن لم يحضر يُسجل ويُعرض عليه موعد جديد لا يُسقط بصمت",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "specialty", ar: "التخصص", en: "Specialty" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "od1", "patientRef": "P-512", "specialty": "قلب", "status": "open" }],
       }}
     />
   );

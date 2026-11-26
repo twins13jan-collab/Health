@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "complexCare",
         subtitleAr: "خطط رعاية متعددة الجهات بمنسق مسمى ومسؤوليات فرق محددة + انتقالات بين المستشفى والمنزل والتأهيل بتسليم موثق وأجهزة منزلية مجهزة قبل التحرك + خطة طوارئ فردية لكل مريض + الإغلاق يقيس استمرارية الرعاية وجودة الحياة لا يحدث بصمت",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "coordinator", ar: "المنسق", en: "Coordinator" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "cc1", "patientRef": "P-410", "coordinator": "منسقة سارة", "status": "active" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "decisionRegistry",
         subtitleAr: "تسجيل القرار بصاحب اختصاصه وسنده وسياقه وبدائله المدروسة وأسباب اختياره مربوطًا بموافقاته وبروتوكوله — قرار بلا بدائل موثقة أمرٌ لا قرار + مراجعة وتعديل وإلغاء بسجلات جديدة وأسباب إلزامية: التاريخ لا يُحرَّر أبدًا + قرارات لجان بموقف تعارض مصالح واضح",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "decisionMaker", ar: "صاحب القرار", en: "Maker" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "dr1", "title": "اعتماد بروتوكول قسطرة جديد", "decisionMaker": "المجلس الطبي", "status": "active" }],
       }}
     />
   );

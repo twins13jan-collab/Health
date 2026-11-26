@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "amrDeep",
         subtitleAr: "تجميع بيانات مزارع وحساسية بتعريفات موحدة لجراثيم ومضادات وطرق اختبار + تحليل مقاومة حسب منشأة ومنطقة وعينة وربط استهلاك بنتائج — والمعدل من نتائج موحدة الطريقة فقط، ونمط غير معتاد يقفز فوق خط الأساس يتحقق قبل نشره، وتقارير الترصد محمية الهوية دائمًا",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "antibiotic", ar: "المضاد", en: "Antibiotic" },
           { key: "result", ar: "النتيجة", en: "Result" },
         ],
-        demoRows: [{ "id": "am1", "organism": "Klebsiella pneumoniae", "antibiotic": "Meropenem", "result": "R" }],
       }}
     />
   );

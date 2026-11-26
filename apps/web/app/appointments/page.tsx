@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "appointments",
         subtitleAr: "مواعيد بلا حجز مزدوج لنفس الطبيب + استحقاق تطعيمات EPI",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "channel", ar: "القناة", en: "Channel" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "subject": "تذكير بموعد العيادة", "channel": "sms", "status": "queued"}],
       }}
     />
   );

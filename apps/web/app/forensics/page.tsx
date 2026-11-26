@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "forensics",
         subtitleAr: "طلبات فحص وتقارير طبية قانونية وسلسلة حيازة عينات وأدلة منفصلة عن الملف العلاجي + لا فحص قبل التحقق من اختصاص الجهة القضائية وتفويضها + الأدلة تتحرك بسلسلة حيازة لا تنكسر بطرفين مسميين + التقرير يُسلَّم بتوقيعين مختلفين وللجهة الطالبة فقط",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "requestingAuthority", ar: "الجهة الطالبة", en: "Authority" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "f1", "caseRef": "قضية 4521", "requestingAuthority": "نيابة أسيوط", "status": "in_examination" }],
       }}
     />
   );

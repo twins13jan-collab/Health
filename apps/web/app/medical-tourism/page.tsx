@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "medicalTourism",
         subtitleAr: "طلبات مرضى دوليين وملفات وترجمة وموافقات + تنسيق مواعيد وتقديرات مالية وإقامة ونقل ولوجستيات + إحالات دولية وتقارير وتواصل مع جهات مرسلة — والجدولة بعد ملف مترجم وموافقة وتقدير معتمد، والبيانات لا تعبر الحدود إلا بأساس قانوني وموافقة معًا، ومتابعة ما بعد العودة بإذن المريض فقط",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "country", ar: "الدولة", en: "Country" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "mt1", "patientRef": "INTL-2026-014", "country": "ليبيا", "status": "received" }],
       }}
     />
   );

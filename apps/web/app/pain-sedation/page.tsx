@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "painSedation",
         subtitleAr: "تقييم ألم بمقاييس مناسبة للعمر والحالة (FLACC لغير الناطق ووجوه للأطفال ورقمي للبالغين) + خطط تسكين حادة ومزمنة وبعد عمليات وتلطيفية بأدوية خاضعة للرقابة مسجلة + تهدئة إجرائية خارج العمليات لا تبدأ قبل تقييم ومجرى هواء وموافقة + خروج بدرجة إفاقة Aldrete لا تقل عن 9",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "scale", ar: "المقياس", en: "Scale" },
           { key: "score", ar: "الدرجة", en: "Score" },
         ],
-        demoRows: [{ "id": "ps1", "patientRef": "P-801", "scale": "NRS", "score": 8 }],
       }}
     />
   );

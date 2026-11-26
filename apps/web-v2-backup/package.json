@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "description": "Egypt National Health System — Web frontend (Catalog v6 rebuild). TypeScript + React + Next.js App Router, Arabic-first RTL with English toggle.",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "name": "@egypt-health/web-v2",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "version": "6.0.0"
+}

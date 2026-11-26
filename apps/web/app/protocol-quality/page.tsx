@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "protocolQuality",
         subtitleAr: "ربط كل بروتوكول بمصدره العلمي وجهة اعتماده ونطاقه واستثناءاته وموانعه + تواريخ مراجعة وسحب وتحديث: المسحوب لا يلزم أحدًا والمنتهية مراجعته متقادم حتى يُراجع + قياس التزام وانحرافات مبررة بسجل وغير مبررة — فوق 10% غير مبررة مراجعة جودة + تنبيهات ترتبط بالإصدار الساري فقط",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "version", ar: "الإصدار", en: "Version" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "pq1", "name": "بروتوكول السكتة الدماغية", "version": "v4", "status": "current" }],
       }}
     />
   );

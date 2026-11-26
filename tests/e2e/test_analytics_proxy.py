@@ -1,6 +1,6 @@
 from _common import call, login, report
 R = []
-admin = login('smoke@health.gov.eg')
+admin = login('smoke@khattab-ai.com')
 s, b = call('GET', '/api/analytics/health', None, admin)
 R.append(('analytics service reachable THROUGH the platform', s == 200 and b.get('status') == 'up', s))
 series = [{'date': f'2026-11-{d:02d}', 'cases': c} for d, c in zip(range(9, 23), [12,14,13,18,22,25,31,36,42,51,58,66,74,83])]

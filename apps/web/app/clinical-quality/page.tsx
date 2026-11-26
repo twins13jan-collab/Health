@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "clinicalQuality",
         subtitleAr: "مؤشرات نتائج سريرية ووفيات ومضاعفات وإعادة دخول وعدوى مكتسبة + مراجعة وفيات وحالات حرجة واجتماعات متعددة التخصصات + تحليل أسباب جذرية وخطط تحسين وإجراءات تصحيحية ووقائية — والمؤشر لا يقارن إلا معدّلًا باختلاف الحالات، وخطة التحسين لا تغلق قبل التحقق من فاعليتها: الإجراءات المنجزة جهد لا تحسن مثبت",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "category", ar: "الفئة", en: "Category" },
           { key: "value", ar: "القيمة", en: "Value" },
         ],
-        demoRows: [{ "id": "cq1", "name": "وفيات جراحة القلب المعدلة", "category": "mortality", "value": 2.1 }],
       }}
     />
   );

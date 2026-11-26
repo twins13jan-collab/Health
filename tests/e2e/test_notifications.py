@@ -1,7 +1,7 @@
 import uuid
 from _common import call, login, report
 R = []
-admin = login('smoke@health.gov.eg')
+admin = login('smoke@khattab-ai.com')
 R.append(('admin logged in', bool(admin), 200))
 s, b = call('POST', '/api/notification-outbox', {'recipientRef': 'physician-7', 'channel': 'pigeon', 'subject': 'x', 'body': 'y'}, admin)
 R.append(('unknown channel -> 400 with the channel list', s == 400, s))

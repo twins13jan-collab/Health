@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "nutrition",
         subtitleAr: "فصل صارم بين الموصوف والمنفذ فعليًا: الفجوة تظهر بسببها ولا تُعاد كتابة السجل + اختصاصي التغذية يقترح والطبيب يعتمد والصيدلي يراجع الوريدي قبل بدئه + لا استبدال تلقائي لمكون غير متاح",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "goal", ar: "الهدف", en: "Goal" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "n1", "route": "enteral", "estimatedNeedsKcal": 1900, "goal": "دعم التئام", "status": "active" }],
       }}
     />
   );

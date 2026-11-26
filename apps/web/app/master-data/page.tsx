@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "masterData",
         subtitleAr: "كل كتالوج له مالك ومصدر وإصدار + رمز غير معروف يذهب للمراجعة ولا يحول تخمينًا أبدًا + رمز موقوف يبقى مقروءًا تاريخيًا ولا يدخل معاملة جديدة إلا باستثناء معتمد من الحوكمة",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "description", ar: "الوصف", en: "Description" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "md1", "codeSystem": "LOCAL", "code": "DX-991", "description": "تشخيص محلي غير معروف", "status": "unknown_review" }],
       }}
     />
   );

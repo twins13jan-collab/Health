@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "orgChange",
         subtitleAr: "تحليل أثر التغيير على الأدوار والسياسات والبيانات + الإطلاق محكوم: تواصل منجز وتدريب 80% من المتأثرين وإجراءات وتفويضات محدثة + سفراء تغيير وملاحظات مستخدمين معالجة + التبني يُقاس من الاستخدام الفعلي والحلول الجانبية لا يُعلن من تاريخ الإطلاق",
@@ -13,7 +13,6 @@ export default function Page() {
           { key: "title", ar: "المبادرة", en: "Initiative" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "oc1", "title": "إطلاق نظام الاستقبال الجديد", "status": "live" }],
       }}
     />
   );

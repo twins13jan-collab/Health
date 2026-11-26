@@ -19,11 +19,11 @@ class EgyptHealthApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'المنظومة الوطنية الصحية — مصر',
+      title: 'خطاب للصحة العامة وإدارة الأزمات',
       debugShowCheckedModeBanner: false,
       locale: const Locale('ar', 'EG'),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF0B6E4F)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF005463)),
         useMaterial3: true,
         fontFamily: 'NotoKufiArabic',
       ),

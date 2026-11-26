@@ -1,0 +1,21 @@
+import ModuleScreen from "@/components/ModuleScreen";
+
+export default function Page() {
+  return (
+    <ModuleScreen
+      config={{
+        titleKey: "masterData",
+        subtitleAr: "كل كتالوج له مالك ومصدر وإصدار + رمز غير معروف يذهب للمراجعة ولا يحول تخمينًا أبدًا + رمز موقوف يبقى مقروءًا تاريخيًا ولا يدخل معاملة جديدة إلا باستثناء معتمد من الحوكمة",
+        subtitleEn: "Every catalogue has an owner, a source and a version + an unknown code goes to review and is never mapped by guessing + a deprecated code stays readable in history but enters new transactions only with a governance-approved exception",
+        endpoint: "/api/master-data/codes/review-queue",
+        envelopeKey: "codes",
+        columns: [
+          { key: "codeSystem", ar: "النظام", en: "System" },
+          { key: "code", ar: "الرمز", en: "Code" },
+          { key: "description", ar: "الوصف", en: "Description" },
+          { key: "status", ar: "الحالة", en: "Status", status: true },
+        ],
+      }}
+    />
+  );
+}

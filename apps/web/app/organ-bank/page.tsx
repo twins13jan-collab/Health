@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "organBank",
         subtitleAr: "تبرع وتقييم وموافقات وتخصيص وفق القانون + لا تخصيص دون موافقة موثقة وتقييم مكتمل وفحص إكراه نظيف واعتماد لجنة + أي حافز غير أخلاقي يوقف الحالة فورًا + سلسلة حيازة وتبريد بوقت إقفار محسوب لكل عضو + تتبع كامل من المصدر إلى المستفيد ومتابعة ما بعد الزراعة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "organOrTissue", ar: "العضو/النسيج", en: "Organ/Tissue" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ob1", "donorCode": "DNR-100", "organOrTissue": "kidney", "status": "allocated" }],
       }}
     />
   );

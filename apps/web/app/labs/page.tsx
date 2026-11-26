@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "labs",
         subtitleAr: "طلبات المختبر ومسارها التسلسلي — النتائج الحرجة بتنبيه وإقرار إلزامي (دورة 219)",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "priority", ar: "الأولوية", en: "Priority" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "testCode": "K", "testName": "Potassium", "priority": "stat", "status": "resulted"}, {"id": "d2", "testCode": "GLU", "testName": "Glucose", "priority": "routine", "status": "verified"}],
       }}
     />
   );

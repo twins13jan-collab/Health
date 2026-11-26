@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "bloodBank",
         subtitleAr: "وحدات دم بحجز مشروط بتوافق ABO/Rh ورفض المنتهي (دورة 223)",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "component", ar: "المكوّن", en: "Component" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "unitCode": "BU-1001", "bloodGroup": "O-", "component": "RBC", "status": "available"}, {"id": "d2", "unitCode": "BU-1002", "bloodGroup": "A+", "component": "PLASMA", "status": "reserved"}],
       }}
     />
   );

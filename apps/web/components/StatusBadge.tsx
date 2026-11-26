@@ -8,7 +8,8 @@ const TONES: Record<string, string> = {
   less_urgent: "ok", non_urgent: "muted", under_construction: "warn",
 };
 
+/** Soft-tinted status badge; unknown statuses fall back to a neutral tone. */
 export default function StatusBadge({ status }: { status: string }) {
   const tone = TONES[status] ?? "muted";
-  return <span className={`badge badge-${tone}`}>{status.replace(/_/g, " ")}</span>;
+  return <span className={`badge ${tone}`}>{status.replace(/_/g, " ")}</span>;
 }

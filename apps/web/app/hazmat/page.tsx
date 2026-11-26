@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "hazmat",
         subtitleAr: "تصنيف مواد وخطر ونطاق تعرض + مناطق عزل ساخنة ودافئة وباردة + مصاب ملوث لا يدخل منطقة العلاج قبل التطهير + تنسيق واجب مع مراكز السموم والجهات المختصة للحوادث الكيميائية والإشعاعية + لا إغلاق ومعرّض واحد مدين بفحص متابعة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "agentType", ar: "النوع", en: "Type" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "hz1", "agentName": "غاز الكلور", "agentType": "chemical", "status": "responding" }],
       }}
     />
   );

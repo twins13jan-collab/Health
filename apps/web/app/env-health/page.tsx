@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "envHealth",
         subtitleAr: "بيانات طقس وحرارة وجودة هواء ومياه وتلوث من مصادر موثوقة فقط — تنبيه رسمي لا يخرج من حساس رديء + تحليل مخاطر حرارة وسيول وعواصف وتلوث وخطط استجابة للسكان المتأثرين + سلامة مياه شرب وصرف ونفايات: نتيجة غير آمنة لا تُغلق قبل إجراء حماية فعلي",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "level", ar: "المستوى", en: "Level" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "eh1", "hazardType": "heatwave", "level": "warning", "status": "open" }],
       }}
     />
   );

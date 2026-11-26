@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "eligibility",
         subtitleAr: "التحقق قبل الحجز من وجود الخدمة فعليًا: معروضة ومرخصة وبسعة وكوادر ومعدات ومستهلكات + التحضير الناقص شرط ظاهر لا منع صامت + التغطية المالية تتحقق وتُبلَّغ لكنها لا تدخل قرار الأهلية أبدًا + كل قيد مسمى بسبب عدم الإتاحة ووقت التحقق ومصدره مسجلان",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "restrictions", ar: "القيود", en: "Restrictions" },
           { key: "coverageStatus", ar: "التغطية", en: "Coverage" },
         ],
-        demoRows: [{ "id": "el1", "serviceName": "قسطرة تشخيصية", "result": "eligible", "restrictions": "", "coverageStatus": "covered" }],
       }}
     />
   );

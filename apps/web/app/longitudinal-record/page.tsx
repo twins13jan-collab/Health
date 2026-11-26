@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "longitudinal",
         subtitleAr: "هوية موحدة ومعرف مؤقت لا يعطل الرعاية أبدًا + مطابقة مفسرة ودمج عالي المخاطر باعتماد مزدوج وفصل مهام + قيم متعارضة تبقى ظاهرة بمصدرها ولا تستبدل بصمت + فك دمج قابل للتدقيق",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "sourceSystem", ar: "المصدر", en: "Source" },
           { key: "ownerFacility", ar: "المالك", en: "Owner" },
         ],
-        demoRows: [{ "id": "lr1", "recordType": "diagnosis", "recordRef": "ENC-2210", "sourceSystem": "العيادات", "ownerFacility": "المستشفى المركزي" }],
       }}
     />
   );

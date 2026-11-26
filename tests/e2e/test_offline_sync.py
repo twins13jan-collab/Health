@@ -2,7 +2,7 @@ import uuid
 from datetime import datetime, timedelta, timezone
 from _common import call, login, find_id, report
 R = []
-admin = login('smoke@health.gov.eg')
+admin = login('smoke@khattab-ai.com')
 R.append(('admin logged in', bool(admin), 200))
 code = 'web-test-' + uuid.uuid4().hex[:8]
 s, b = call('POST', '/api/offline/devices', {'deviceCode': code, 'userRef': 'web-client', 'encryptionEnabled': True}, admin)

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "medicationDelivery",
         subtitleAr: "تحقق من أهلية التوصيل والوصفة ومراجعة واعتماد الصيدلي قبل التجهيز والإرسال + تسليم خاص بهوية متحقق منها وكسر التبريد يبطل التسليم + محاولتا فشل تفتحان مسار الإرجاع والعبوة منكسرة التبريد تُحجر ولا تعود للرف أبدًا",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "patientRef", ar: "المريض", en: "Patient" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "md1", "medicationName": "إنسولين", "patientRef": "P-600", "status": "delivered" }],
       }}
     />
   );

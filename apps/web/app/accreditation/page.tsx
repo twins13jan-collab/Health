@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "accreditation",
         subtitleAr: "ملفات ترخيص منشأة وقسم وخدمة وممارسة بمعايير وأدلة وتواريخ انتهاء — منتهي الترخيص خدمة غير مرخصة مهما قالت الشهادة المؤطرة + تفتيش بملاحظات لا يُغلق قبل إتمام التصحيح + تعليق أو تقييد بقرار جهة مختصة مسماة بسندها فقط",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "scope", ar: "النطاق", en: "Scope" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ac1", "holderRef": "قسم القسطرة", "scope": "service", "status": "active" }],
       }}
     />
   );

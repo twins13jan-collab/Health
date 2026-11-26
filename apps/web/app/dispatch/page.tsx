@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "dispatch",
         subtitleAr: "طلبات إسعاف بأقرب وحدة متاحة بالقدرة المطلوبة وقائمة انتظار وتصعيد (دورة 224)",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "requiredCapability", ar: "القدرة المطلوبة", en: "Capability" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "complaint": "Chest pain", "requiredCapability": "ALS", "status": "received"}],
       }}
     />
   );

@@ -9,7 +9,7 @@ def get_pdf(path, token):
     except urllib.error.HTTPError as e:
         return e.code, '', b''
 R = []
-admin = login('smoke@health.gov.eg')
+admin = login('smoke@khattab-ai.com')
 nid = '2980301' + uuid.uuid4().hex[:7]
 s, b = call('POST', '/api/patients', {'nationalId': nid, 'fullName': 'مريض مستندات رسمية', 'birthDate': '1998-03-01', 'gender': 'F'}, admin)
 pid = find_id(b, 'patient')

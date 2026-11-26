@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "diseaseRegistries",
         subtitleAr: "سجلات أمراض بتعريفات حالة موحدة — من لا يستوفي التعريف لا يدخل + ربط بالنتائج والمتابعة وبروتوكولات بحث وموافقاتها + جودة بيانات وفقد متابعة وتحيز معلنة: نشر مجمع لمجموعة ≥30 فقط، وفوق 30% فقدًا مذكرة تحيز إلزامية فالنشر الصامت للباقين كذب إحصائي",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "caseDefinitionRef", ar: "تعريف الحالة", en: "Case definition" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "rg1", "name": "سجل الأورام", "caseDefinitionRef": "تعريف وطني موحد v3", "status": "active" }],
       }}
     />
   );

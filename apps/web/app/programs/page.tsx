@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "programs",
         subtitleAr: "جلسات غسيل بلا تعارض ماكينات + جرعات أورام محسوبة بـBSA وتعديل كلى وتحقق صيدلي",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "endsAt", ar: "الانتهاء", en: "Ends" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "machineCode": "HD-03", "startsAt": "2026-11-23T08:00:00+02:00", "endsAt": "2026-11-23T12:00:00+02:00", "status": "scheduled"}],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "apiManagement",
         subtitleAr: "سجل مركزي لواجهات وإصدارات ومالكين بمصادقة وتفويض وحصص ومفاتيح قابلة للإلغاء الفوري + مخططات رسائل وتوافق خلفي: إصدار كاسر لا يحل محل الحي قبل نافذة إهمال لسابقه + بوابة مطورين وبيئات اختبار وقياس استخدام وأخطاء وتكلفة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "ownerRef", ar: "المالك", en: "Owner" },
           { key: "currentVersion", ar: "الإصدار الحالي", en: "Current version" },
         ],
-        demoRows: [{ "id": "ap1", "name": "واجهة المختبر FHIR", "ownerRef": "فريق التكامل", "currentVersion": "v3" }],
       }}
     />
   );

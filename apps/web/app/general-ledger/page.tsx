@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "ledger",
         subtitleAr: "قيد غير متوازن يرفض + قيد مرحل لا يعدل أبدًا وتصحيحه بقيد عكسي فقط + ميزان مراجعة يعاد إنتاجه من القيود المرحلة + فترة مغلقة لا تفتح إلا بموافقة وسبب وسجل أثر + حركة بنكية بلا مرجع تبقى غير مطابقة",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "credit", ar: "دائن", en: "Credit" },
           { key: "balance", ar: "الرصيد", en: "Balance" },
         ],
-        demoRows: [{ "id": "gl1", "account": "4110 إيرادات خدمات", "debit": 0, "credit": 125000, "balance": -125000 }],
       }}
     />
   );

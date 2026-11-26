@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "hta",
         subtitleAr: "تقييم أدوية وأجهزة وإجراءات وتقنيات عبر الفاعلية والسلامة والتكلفة والجدوى والأثر الأخلاقي + اللجنة لا تقيّم قبل إعلان تضارب المصالح كاملًا ومشاركة أصحاب المصلحة + قوة التوصية محدودة بجودة الأدلة: الضعيفة نتيجتها بحث فقط أو رفض مهما حماس الطالب",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "techType", ar: "النوع", en: "Type" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "hta1", "technologyName": "جهاز قسطرة جديد", "techType": "device", "status": "appraisal" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "endoscopy",
         subtitleAr: "منظار غير معاد معالجته بالكامل لا يُحجز وفشل اختبار التسرب يحجره مع تتبع حالاته + لا بدء بلا قائمة تحقق مكتملة + عينة بلا ملصق موثوق تُعزل ولا تُنسب + خروج بتقييم إفاقة",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "urgency", ar: "الاستعجال", en: "Urgency", status: true },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "e1", "scopeType": "منظار قولون", "indication": "نزيف شرجي", "urgency": "urgent", "status": "completed" }],
       }}
     />
   );

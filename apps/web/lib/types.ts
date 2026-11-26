@@ -143,9 +143,8 @@ export interface NationalKpis {
 }
 
 export interface LoginRequest {
-  username: string;
+  email: string;
   password: string;
-  facilityCode?: string;
 }
 
 export interface LoginResponse {
@@ -177,3 +176,39 @@ export const REASON_REQUIRED: ReadonlySet<CycleStatus> = new Set([
   "reconciled",
   "on_hold",
 ]);
+
+/* ---------------------------------------------------------------
+ * Facility-type labels — the ONE place a facility `type` code is
+ * turned into display text, in both languages, so no raw code
+ * (e.g. "dialysis_center") ever reaches the screen. Keys mirror
+ * the i18n dictionary entries (typeHospital, typeDialysisCenter…).
+ */
+export const FACILITY_TYPE_LABELS: Record<string, { ar: string; en: string }> = {
+  hospital: { ar: "مستشفى", en: "Hospital" },
+  general_hospital: { ar: "مستشفى عام", en: "General hospital" },
+  university_hospital: { ar: "مستشفى جامعي", en: "University hospital" },
+  emergency_hospital: { ar: "مستشفى طوارئ", en: "Emergency hospital" },
+  specialized_center: { ar: "مركز متخصص", en: "Specialized centre" },
+  center: { ar: "مركز طبي", en: "Medical centre" },
+  radiology_center: { ar: "مركز أشعة", en: "Radiology / imaging centre" },
+  clinic: { ar: "عيادة", en: "Clinic" },
+  health_center: { ar: "مركز صحي", en: "Health centre" },
+  health_unit: { ar: "وحدة صحية", en: "Health unit" },
+  ambulance_station: { ar: "محطة إسعاف", en: "Ambulance station" },
+  mobile_clinic: { ar: "عيادة متنقلة", en: "Mobile clinic" },
+  family_center: { ar: "مركز صحة أسرة", en: "Family health centre" },
+  lab: { ar: "معمل تحاليل", en: "Laboratory" },
+  laboratory: { ar: "معمل تحاليل", en: "Laboratory" },
+  pharmacy: { ar: "صيدلية", en: "Pharmacy" },
+  blood_bank: { ar: "بنك دم", en: "Blood bank" },
+  dialysis_center: { ar: "مركز غسيل كلوي", en: "Dialysis centre" },
+  oncology_center: { ar: "مركز أورام", en: "Oncology centre" },
+};
+
+export function facilityTypeLabel(type: string | null | undefined, lang: "ar" | "en"): string {
+  if (!type) return "—";
+  const entry = FACILITY_TYPE_LABELS[type];
+  if (entry) return lang === "ar" ? entry.ar : entry.en;
+  // Unknown code: prettify rather than leaking snake_case.
+  return type.replace(/_/g, " ");
+}

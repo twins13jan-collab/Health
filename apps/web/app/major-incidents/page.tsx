@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "majorIncidents",
         subtitleAr: "خطط استجابة متعددة الجهات بسلاسل قيادة واتصال بديل + قوائم فرق احتياطية ومتطوعين موثقين فقط يُنشرون + تدريبات ومحاكاة بدروس مستفادة — خطة بلا تدريب خلال 12 شهرًا لا تُفعَّل + رسائل توعية عامة من مصادر معتمدة فقط ومكافحة شائعات صحية",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "agenciesInvolved", ar: "الجهات", en: "Agencies" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "mi1", "name": "خطة انهيار مبنى سكني", "agenciesInvolved": "صحة + دفاع مدني + إسعاف", "status": "ready" }],
       }}
     />
   );

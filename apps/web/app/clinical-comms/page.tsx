@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "clinicalComms",
         subtitleAr: "بلاغات حرجة بين الطبيب والتمريض والمعمل والأشعة والصيدلة بحلقة مغلقة: تأكيد استلام وإعادة قراءة قبل أن يُعدّ البلاغ مُبلَّغًا + بلاغ صامت 15 دقيقة يتصاعد ولا يشيخ في صندوق وارد + قنوات بديلة عند تعطل النظام موثقة الاستخدام",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "messageType", ar: "النوع", en: "Type" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "cc1", "patientRef": "P-900", "messageType": "critical_result", "status": "read_back" }],
       }}
     />
   );

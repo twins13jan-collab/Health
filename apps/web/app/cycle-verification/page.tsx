@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "cycleVerification",
         subtitleAr: "تعريف بدء خدمة واكتمالها ومسؤول كل انتقال + تحقق من طلب وفرز وموافقة وتنفيذ ونتيجة ومتابعة بأدلة مرجعية + تحقق من دورة دواء ومخزون وفاتورة وتكلفة وقيد وقبول إحالة وتقديم خدمة وإرجاع نتيجة + إدارة حالات معلقة ومتعثرة وملغاة علنًا — والشاشة أو استجابة API ليستا دليل اكتمال عملية أبدًا كما ينص الكتالوج",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "instanceRef", ar: "الحالة", en: "Instance" },
           { key: "followupDone", ar: "المتابعة تمت", en: "Follow-up done" },
         ],
-        demoRows: [{ "id": "cvf1", "cycleRef": "CYCLE-224", "instanceRef": "إحالة-881", "followupDone": false }],
       }}
     />
   );

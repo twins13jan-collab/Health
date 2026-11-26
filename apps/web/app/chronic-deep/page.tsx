@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "chronicDeep",
         subtitleAr: "قوائم مرضى مستهدفين بمعايير معلنة + خطط متابعة سكري وضغط وقلب وربو وكلى + قياسات منزلية بتحقق من المصدر: القراءة غير الموثقة تُسجل وتُوسم ولا توجه رعاية أبدًا + تذكير بمواعيد وفحوص وأدوية + تقييم مخاطر مضاعفات وإحالة مبكرة وقياس سيطرة وانقطاع ومتابعة وبرامج كشف مبكر بمعايير أهلية",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "conditionName", ar: "الحالة", en: "Condition" },
           { key: "criteriaRef", ar: "المعايير", en: "Criteria" },
         ],
-        demoRows: [{ "id": "cd1", "patientRef": "P-901", "conditionName": "سكري نوع ثانٍ", "criteriaRef": "معايير السكري 2026" }],
       }}
     />
   );

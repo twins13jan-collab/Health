@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "openData",
         subtitleAr: "تحديد مجموعات بيانات مسموح نشرها + تقييم مخاطر إعادة تعرف + تجميع وإخفاء هوية بكبت خلايا صغيرة (حد أدنى 10: دونها قد تكون الإحصائية شخصًا مسمى) + توثيق تعريفات ومنهج ومصدر + شروط إعادة استخدام وتحديث + سحب فوري بسبب مسجل عند خطأ أو خطر خصوصية: بيانات لا تُسحب تسريب ببوابة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "minCellSize", ar: "حد الخلية الأدنى", en: "Min cell" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "od9", "name": "زيارات العيادات حسب المحافظة", "minCellSize": 25, "status": "draft" }],
         rowActions: [
           { labelAr: "نشر", labelEn: "Publish", endpoint: "/api/open-data/datasets/{id}/publish" },
         ],

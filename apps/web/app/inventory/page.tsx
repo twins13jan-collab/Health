@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "inventory",
         subtitleAr: "أصناف ومخزون بحركات مسببة ورفض الرصيد السالب وتنبيه إعادة الطلب",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "quantity", ar: "الرصيد", en: "Qty" },
           { key: "reorderLevel", ar: "حد الطلب", en: "Reorder level" },
         ],
-        demoRows: [{"id": "d1", "itemCode": "SUT-001", "name": "Sutures 3-0", "quantity": 140, "reorderLevel": 50}, {"id": "d2", "itemCode": "IV-SET", "name": "IV set", "quantity": 32, "reorderLevel": 40}],
       }}
     />
   );

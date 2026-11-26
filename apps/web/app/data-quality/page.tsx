@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "dataQuality",
         subtitleAr: "قواعد اكتمال وصحة واتساق وحداثة وعدم تكرار بمالك بيانات ومصدر حقيقة معلن لكل أصل + قاموس بيانات وتعريفات مؤشرات ببسط ومقام + تتبع مفقود ومتعارض وتصحيحاته بسند مصدر الحقيقة + كل رقم منشور بدرجة ثقته: دون 70 لا يُنشر إلا بتحفظاته مرفقة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "ownerRef", ar: "المالك", en: "Owner" },
           { key: "completenessPct", ar: "الاكتمال %", en: "Completeness %" },
         ],
-        demoRows: [{ "id": "dq1", "name": "سجل اللقاءات", "ownerRef": "إدارة المعلومات الصحية", "completenessPct": 96 }],
       }}
     />
   );

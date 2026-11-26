@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "followUp",
         subtitleAr: "خطة متابعة عند الخروج بمسؤول مسمى ومهام مؤرخة + مهمة متأخرة تصعد ولا تسقط بصمت + نتائج وصلت بعد الخروج تراجع ويُبلَّغ المريض + فحوص الأدوية عالية الخطورة جزء من الخطة + لا إغلاق وبنود مصعدة أو غير مراجعة مفتوحة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "responsible", ar: "المسؤول", en: "Owner" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "fu1", "patientRef": "P-700", "responsible": "فريق متابعة الخروج", "status": "active" }],
       }}
     />
   );

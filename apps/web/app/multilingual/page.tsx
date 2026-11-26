@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "multilingual",
         subtitleAr: "عربية باتجاه RTL وإنجليزية + مصطلحات وترجمات طبية لا تُنشر قبل مراجعة طبية: تعليمات جرعة مترجمة آليًا خطر سريري + توافق قارئات شاشة ولوحة مفاتيح وتباين وخطوط وواجهات ميسرة ودعم أجهزة محدودة واتصال ضعيف — وادعاء الإتاحة يقف فقط بفحص ناجح واختبار مع فئات متنوعة من المستخدمين أنفسهم",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "language", ar: "اللغة", en: "Language" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ml1", "termKey": "dose_twice_daily", "language": "ar", "status": "draft" }],
       }}
     />
   );

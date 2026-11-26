@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "palliative",
         subtitleAr: "رغبة المريض لا تستبدلها خوارزمية: التمثيل القانوني يتحقق ولا يُفترض + وثيقة غير موثقة لا تلغي موثقة + استجابة الألم تُقاس قبل وبعد + ألم شديد يستدعي استجابة عاجلة",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "functionalStatus", ar: "الحالة الوظيفية", en: "Functional status" },
           { key: "assessedAt", ar: "التاريخ", en: "Date" },
         ],
-        demoRows: [{ "id": "p1", "symptoms": "ألم وضيق نفس", "painScore": 8, "functionalStatus": "PPS 40%", "assessedAt": "2026-11-22T13:00:00+02:00" }],
       }}
     />
   );

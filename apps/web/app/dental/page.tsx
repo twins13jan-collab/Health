@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "dental",
         subtitleAr: "لا إجراء على موقع غير موثق ولا بلا موافقة ولا بأدوات تعقيم فاشلة + كل إجراء متتبع إلى السن والطبيب والمادة والتشغيلة + مخطط أسنان بإصدارات وزرعات قابلة للاستدعاء بالتشغيلة",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "dentist", ar: "الطبيب", en: "Dentist" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "d1", "procedureCode": "حشو مركب", "toothNumber": 36, "dentist": "د. أسنان", "status": "performed" }],
       }}
     />
   );

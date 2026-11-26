@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "digitalQuality",
         subtitleAr: "قياس إتمام المهام والأخطاء وزمن التحميل والاستقرار واتصال الواجهات بالـAPI مقابل بيانات فعلية + القاعدة الجوهرية: البيانات التجريبية لا تظهر كتشغيلية أبدًا — سطح إنتاجي بحادث بيانات تجريبية مفتوح غير ممتثل حتى يُحل + اختبار الواجهات مع مستخدمين فعليين",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "environment", ar: "البيئة", en: "Env" },
           { key: "passed", ar: "ناجح", en: "Passed" },
         ],
-        demoRows: [{ "id": "dq1", "surface": "/reception", "environment": "production", "passed": true }],
       }}
     />
   );

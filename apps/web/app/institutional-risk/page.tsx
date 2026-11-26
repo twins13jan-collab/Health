@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "institutionalRisk",
         subtitleAr: "سجل مخاطر سريرية وتشغيلية ومالية وقانونية وتقنية باحتمال وأثر وضوابط ومخاطرة متبقية ظاهرة بجانب الأصلية + مالك خطر مسمى وخطة معالجة لكل خطر + إغلاق فقط بمعالجات منفذة كاملة ومتبقٍّ دون القصوى أو قبول رسمي موثق لها + قرارات لجان متتبعة حتى التنفيذ وقياس الأثر",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "category", ar: "الفئة", en: "Category" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ir1", "title": "انقطاع الشبكة عن العناية المركزة", "category": "technical", "status": "open" }],
       }}
     />
   );

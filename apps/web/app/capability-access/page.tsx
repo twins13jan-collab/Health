@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "capabilityAccess",
         subtitleAr: "ربط خدمة بكوادر وأجهزة وتراخيص وبروتوكولات + شروط تفعيل وإيقاف مؤقت وتحقق دوري من استمرار القدرة + مستويات إحالة ومراكز تميز — والخدمة لا تُعلن متاحة لمجرد وجود اسمها: كوادر وتجهيز وترخيص وبروتوكول وتحقق حديث (30 يومًا) معًا، وعند عدم الإتاحة يظهر السبب وآخر تحقق لا يُخفى",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "staffReady", ar: "كوادر جاهزة", en: "Staff ready" },
           { key: "equipmentReady", ar: "تجهيز جاهز", en: "Equipment ready" },
         ],
-        demoRows: [{ "id": "ca1", "serviceRef": "قسطرة قلبية", "staffReady": true, "equipmentReady": true }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "homeCare",
         subtitleAr: "كل زيارة مرتبطة بخطة معتمدة طبيًا وفريق ووقتين حقيقيين + تدهور منزلي يصعّد فورًا + أجهزة مسلسلة بحالة تسليم وصيانة + قراءات عن بعد بنفس قانون حداثة العناية المركزة والعنوان الدقيق لا يُخزن أبدًا",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "createdAt", ar: "التاريخ", en: "Date" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "h1", "reason": "تمريض منزلي بعد خروج", "zone": "مدينة نصر", "createdAt": "2026-11-22T13:30:00+02:00", "status": "planned" }],
       }}
     />
   );

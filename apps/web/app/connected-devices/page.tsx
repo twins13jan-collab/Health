@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "connectedDevices",
         subtitleAr: "سجل أجهزة بمصدر قياس ومريض مرتبط + استقبال قراءات بتحقق من وحدة ووقت وجهاز + جودة إشارة وقيم شاذة وتكرار + معايرة وصلاحية: قراءة جهاز منتهي المعايرة تُحفظ موسومة غير موثوقة ولا تطلق تنبيهًا أبدًا + تنبيهات بحدود معتمدة وحفظ قراءات خام وتحويلاتها ومصدرها",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "patientRef", ar: "المريض", en: "Patient" },
           { key: "calibrationDue", ar: "المعايرة حتى", en: "Calibration due" },
         ],
-        demoRows: [{ "id": "cv1", "deviceRef": "SPO2-HOME-14", "patientRef": "P-330", "calibrationDue": "2027-03-01" }],
       }}
     />
   );

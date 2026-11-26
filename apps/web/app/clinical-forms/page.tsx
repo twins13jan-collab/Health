@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "clinicalForms",
         subtitleAr: "قوالب تقييم وموافقات وتقارير بحقول حسب التخصص والخدمة وإصدارات مدارة + كتابة على الإصدار النشط فقط وكاتب وتوقيع وتوقيت مسجل + نموذج موقع غير قابل للتعديل: تصحيحه نموذج جديد يحل محله ويظهر الاثنان + حفظ نهائي للموقع فقط وتحويل لبيانات منظمة",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "specialty", ar: "التخصص", en: "Specialty" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "cf1", "name": "تقييم ألم صدري", "specialty": "طوارئ", "status": "active" }],
       }}
     />
   );

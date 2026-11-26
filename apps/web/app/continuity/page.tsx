@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "continuity",
         subtitleAr: "تحليل أثر توقف الخدمات وأهداف زمن ونقطة استعادة معلنة + نسخ احتياطي مهيأ ليس دليلًا: الاستعداد يُثبت باختبار استعادة فعلي حقق أهدافه خلال 6 أشهر + تشغيل بديل عند فقد الشبكة أو مركز البيانات بفعل معلن وسبب موثق",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "impactLevel", ar: "أثر التوقف", en: "Outage impact" },
           { key: "rtoMinutes", ar: "هدف الاستعادة (د)", en: "RTO (min)" },
         ],
-        demoRows: [{ "id": "bc1", "name": "السجل الطبي الإلكتروني", "impactLevel": "critical", "rtoMinutes": 60 }],
       }}
     />
   );

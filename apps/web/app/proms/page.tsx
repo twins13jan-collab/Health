@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "proms",
         subtitleAr: "أدوات قياس معتمدة ونسخ لغوية معتمدة فقط تُجدول في توقيتات ثابتة بمسار الرعاية + إشارة الاحتياج العاجل في أي رد حدث سريري يمنع إغلاق الجدولة حتى يُتابَع + التحليل يحترم حجم العينة: دون 30 تصف الأرقام المجيبين لا الخدمة ولا تُنشر كاستنتاجات + النتائج تكمّل التقييم السريري ولا تستبدله",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "language", ar: "اللغة", en: "Language" },
           { key: "domain", ar: "المجال", en: "Domain" },
         ],
-        demoRows: [{ "id": "pr1", "name": "EQ-5D-5L", "language": "ar", "domain": "outcome" }],
       }}
     />
   );

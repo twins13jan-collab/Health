@@ -1,7 +1,7 @@
 import uuid
 from _common import call, login, find_id, report
 R = []
-admin = login('smoke@health.gov.eg')
+admin = login('smoke@khattab-ai.com')
 R.append(('admin logged in', bool(admin), 200))
 nid = '2990101' + uuid.uuid4().hex[:7]
 s, b = call('POST', '/api/patients', {'nationalId': nid, 'fullName': 'مريض رحلة متكاملة', 'birthDate': '1990-05-01', 'gender': 'M'}, admin)

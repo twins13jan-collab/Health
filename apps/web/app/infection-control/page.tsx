@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "infectionControl",
         subtitleAr: "حالات مشتبه بها ومؤكدة مبلّغ عنها — مؤكدة واجبة الإبلاغ دون إشعار تعد إخلالًا + العزل الهوائي بضغط سلبي فقط وإنهاء العزل لفريق مكافحة العدوى وحده + مؤشرات عدوى الرعاية محسوبة لكل 1000 يوم جهاز + ترشيد المضادات مرتبط بنتائج المزارع",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "source", ar: "المصدر", en: "Source" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ip1", "organism": "MRSA", "caseType": "confirmed", "source": "hai", "status": "isolated" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "citizenPortal",
         subtitleAr: "لا إتاحة قبل التحقق من الهوية + الممثل يعمل داخل نطاق تمثيل معتمد سارٍ فقط + كل إفصاح مسجل بقناته + الرسائل لا تسافر إلا على قنوات فعّلها المواطن والتنبيهات السريرية بموافقتها الخاصة + صيغ ميسرة لذوي الإعاقة جزء من الحساب",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "identityVerified", ar: "هوية موثقة", en: "Verified" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "cp1", "fullName": "مواطن تجريبي", "citizenRef": "NAT-100", "identityVerified": true, "status": "active" }],
       }}
     />
   );

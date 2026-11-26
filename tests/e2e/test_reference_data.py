@@ -1,6 +1,6 @@
 from _common import call, login, report
 R = []
-admin = login('smoke@health.gov.eg')
+admin = login('smoke@khattab-ai.com')
 s, b = call('GET', '/api/ref-data/summary', None, admin)
 R.append(('summary: 27 governorates, 22 ICD-10 chapters, >=100 codes, >=40 essential medicines',
   s == 200 and b.get('governorates') == 27 and b.get('icd10_chapters') == 22 and (b.get('icd10_codes') or 0) >= 100 and (b.get('essential_medicines') or 0) >= 40, s))

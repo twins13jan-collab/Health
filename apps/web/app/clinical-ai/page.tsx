@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "clinicalAi",
         subtitleAr: "سجل نماذج بمصدر وقيود معلنة + اعتماد الاستخدام السريري للجنة لا لمالك النموذج + النموذج يمتنع عند مدخلات ناقصة أو خارج نطاق التحقق + لا أثر سريري دون قرار بشري مسجل والممارس صاحب القرار النهائي + الانحراف يعلق النموذج",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "riskClass", ar: "فئة الخطورة", en: "Risk class" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ai1", "name": "تنبؤ تدهور العناية", "version": "2.1", "riskClass": "high", "status": "approved" }],
       }}
     />
   );

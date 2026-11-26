@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "legalCompliance",
         subtitleAr: "سجل قوانين ولوائح ومعايير مربوط كل متطلب فيها بسياسته وإجرائه وضابطه ودليله + نفاذ وتعديل وإلغاء بتواريخ — المتطلب يلزم داخل نافذته فقط + استثناءات بسند صلاحية وأجل انتهاء: استثناء بلا أجل إلغاء لم يصوت عليه أحد + مراجعات امتثال لا تُغلق عند عدم الامتثال قبل التصحيح",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "sourceType", ar: "المصدر", en: "Source" },
           { key: "effectiveFrom", ar: "النفاذ من", en: "Effective from" },
         ],
-        demoRows: [{ "id": "lc1", "title": "قانون مزاولة المهن الطبية", "sourceType": "law", "effectiveFrom": "2020-01-01" }],
       }}
     />
   );

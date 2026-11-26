@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "nfr",
         subtitleAr: "تعريف أداء وتوسع وتوافر ومرونة وخصوصية وأمن وتدقيق واحتفاظ وتوافق وقابلية نقل وسهولة استخدام وعمل دون اتصال وحدود تحميل وملفات ورسائل لكل خدمة — والمتطلب لا يُستوفى إلا بقياس حديث داخل هدفه: غير المقاس غير موثق، وخدمة بمتطلب حرج غير مستوفٍ ليست جاهزة مهما اكتملت مزاياها",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "category", ar: "الفئة", en: "Category" },
           { key: "metric", ar: "المقياس", en: "Metric" },
         ],
-        demoRows: [{ "id": "nf1", "serviceRef": "خدمة الطوارئ", "category": "availability", "metric": "زمن التوافر الشهري %" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "medicalContent",
         subtitleAr: "مكتبة تثقيف معتمدة ومراجعة طبيًا: أمراض وأدوية وتحضير ورعاية منزلية بلغة المريض وبصيغ متاحة + لا نشر دون اعتماد سريري مستقل عن المؤلف ومصدر ومراجع موثقة + المراجعة تنتهي بعد 12 شهرًا والمحتوى المنتهي يُراجع أو يُسحب + حملات تقيس الفهم لا الوصول فقط",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "topic", ar: "الموضوع", en: "Topic" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "mc1", "title": "العناية بقدم السكري في المنزل", "topic": "home_care", "status": "published" }],
       }}
     />
   );

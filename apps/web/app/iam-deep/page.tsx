@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "iamDeep",
         subtitleAr: "دورة حياة حسابات بشرية وآلية وخدمات وواجهات + SSO وMFA وسياسات كلمات مرور ومفاتيح مرور وأجهزة موثوقة + صلاحيات حسب دور وصفة ومنشأة ومحافظة ومورد وغرض وعملية — والمنح لغرض مسمى وباعتماد غير صاحبه: منح الذات غياب ضبط لا ضبط، والتفويض المؤقت يموت بانتهائه حسابيًا لا بذاكرة أحد + مراجعات استحقاق وفصل واجبات ودورة انضمام ونقل وإنهاء بإبطال جلسات",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "roleName", ar: "الدور", en: "Role" },
           { key: "purpose", ar: "الغرض", en: "Purpose" },
         ],
-        demoRows: [{ "id": "ia1", "subjectRef": "فني دعم", "roleName": "قراءة سجلات", "purpose": "تذكرة دعم 441" }],
       }}
     />
   );

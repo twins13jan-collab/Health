@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "moduleSpecs",
         subtitleAr: "توصيف كل وحدة وظيفية باسم وغرض ونطاق ومالك ومستخدمين وأدوار + دورة عمل بحالات وانتقالات وموافقات واستثناءات وتصعيد + كيانات وحقول حساسة ومصدر حقيقة واحتفاظ + واجهات وأحداث ورسائل ومفاتيح عدم تكرار + صلاحيات وعزل وتدقيق وتفويض — والاعتماد يشهد على توصيف كامل فقط",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "ownerOrg", ar: "المالك", en: "Owner" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "ms1", "moduleRef": "وحدة المختبر", "ownerOrg": "إدارة المعامل", "status": "draft" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "pharmacy",
         subtitleAr: "وصفات بمصالحة دوائية وكشف تفاعلات خطيرة ومنع صرف مزدوج (دورة 222)",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "dose", ar: "الجرعة", en: "Dose" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "drugCode": "INSULIN", "drugName": "Insulin glargine", "dose": "20 IU", "status": "dispensed"}, {"id": "d2", "drugCode": "WARFARIN", "drugName": "Warfarin", "dose": "5 mg", "status": "prescribed"}],
       }}
     />
   );

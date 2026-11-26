@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "facilitySafety",
         subtitleAr: "خطط حريق وإخلاء بمسارات ونقاط تجمع مسماة + فحص الإنذار والإطفاء والغازات والمولدات بعيوب وإجراءات تصحيحية + تصاريح الأعمال الخطرة باعتماد مستقل ومراقبة حريق وقفل ووسم + دخول المناطق الحساسة بمرافقة ومدة محددة + تمارين إخلاء بزمن مقاس",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "location", ar: "الموقع", en: "Location" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "fs1", "workType": "welding", "location": "ورشة الصيانة", "status": "approved" }],
       }}
     />
   );

@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "emergencyTriage",
         subtitleAr: "وصول وفرز ومستوى خطورة وإعادة تقييم + مسارات إنعاش وإصابات وحروق وتسمم وسكتة وجلطات + أوامر طوارئ واستشارات وتسليم موثق — وزمن الباب إلى الطبيب وعد يقاس بحسب الخطورة لا يُروى من الذاكرة، والمغادرة قبل اكتمال التقييم حق للمريض بعد شرح المخاطر وتوقيعه: خروج غير موثق مغادرة غير آمنة لا إغلاق نظيف",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "esiLevel", ar: "مستوى الخطورة", en: "ESI level" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "et1", "patientRef": "ER-2211", "esiLevel": 2, "status": "waiting" }],
       }}
     />
   );

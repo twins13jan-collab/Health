@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "journeys",
         subtitleAr: "رحلة واحدة تربط السجلات الحقيقية التي تنشئها وحدات التشغيل لمريض واحد — لقاء وطلبات معمل ووصفات وفواتير وملخص خروج — تحت معرف ارتباط واحد وبترتيب قانوني لا رجوع فيه، وكل خطوة تكتب حدثًا في صندوق الأحداث الصادر: الخيط الذي يجعل مسار المريض عبر المنظومة قابلًا للتتبع بدل جداول منفصلة لا تعرف بعضها",
@@ -13,7 +13,6 @@ export default function Page() {
           { key: "correlationId", ar: "معرف الارتباط", en: "Correlation id" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "j1", "correlationId": "JRN-9F3A21BC", "status": "completed" }],
         createForm: {
           endpoint: "/api/journeys",
           submitAr: "بدء رحلة", submitEn: "Start journey",

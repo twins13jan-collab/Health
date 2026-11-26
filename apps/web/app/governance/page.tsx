@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "governance",
         subtitleAr: "موافقات بنطاق دقيق ووصول استثنائي مراجَع وطلبات بحث بلا معرّفات مباشرة (دورة 218)",
@@ -14,7 +14,6 @@ export default function Page() {
           { key: "durationMinutes", ar: "المدة (د)", en: "Minutes" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{"id": "d1", "reason": "Unconscious patient, allergy history needed", "durationMinutes": 60, "status": "active"}],
       }}
     />
   );

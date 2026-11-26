@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "medicalWaste",
         subtitleAr: "خطط نظافة حسب خطورة المنطقة وتدقيقها + النفايات مفروزة وموزونة وبسلسلة تسليم كاملة ومتعهد مرخص سارٍ يوم الجمع + تخزين النفايات المعدية فوق 48 ساعة إخلال موثق + الانسكاب الخطر يغلق بعد الاحتواء والتطهير معًا",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "weightKg", ar: "الوزن كجم", en: "Weight kg" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "wm1", "wasteType": "infectious", "sourceUnit": "عناية مركزة", "weightKg": 42.5, "status": "disposed" }],
       }}
     />
   );

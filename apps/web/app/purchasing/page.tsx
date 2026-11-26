@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "purchasing",
         subtitleAr: "سلسلة كاملة من الاحتياج إلى الدفع بفصل مهام في كل خطوة + مطابقة ثلاثية قبل أي صرف والفاتورة المخالفة تعلق + تغيير بنك المورد بتحقق مستقل + تعديل العقد ملحق بإصدار جديد لا يمحو السابق",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "requester", ar: "الطالب", en: "Requester" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "pu1", "itemDescription": "أجهزة مراقبة علامات حيوية", "quantity": 4, "requester": "العناية المركزة", "status": "approved" }],
       }}
     />
   );

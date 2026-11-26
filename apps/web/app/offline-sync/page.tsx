@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "offlineSync",
         subtitleAr: "عمل محلي داخل حزمة محددة النطاق والمدة على جهاز موثوق مشفر + مزامنة لا تكرر المعاملة أبدًا عند الإعادة + بيانات مرجعية قديمة توقف العمليات الحساسة + تعارض سريري أو مالي لا يحل آليًا أبدًا",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "serverSummary", ar: "المركزي", en: "Server" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "os1", "domain": "clinical", "localSummary": "جرعة محلية", "serverSummary": "جرعة مركزية مختلفة", "status": "open" }],
       }}
     />
   );

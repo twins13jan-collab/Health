@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "facilityEstablishment",
         subtitleAr: "دراسة احتياج سكاني وخريطة صحية تبرر المنشأة الجديدة + موقع وتصميم باشتراطات طبية ومكافحة عدوى + مقاولو وعقود ومستخلصات وتغييرات ومخاطر وجودة تنفيذ + توريد وتركيب واختبار أجهزة وأثاث وبنية وأنظمة + استلام وتشغيل تجريبي وتراخيص واعتمادات وتدريب — والافتتاح عند اكتمال كل بوابة: الشريط ليس بوابة",
@@ -13,7 +13,6 @@ export default function Page() {
           { key: "name", ar: "المشروع", en: "Project" },
           { key: "status", ar: "الحالة", en: "Status", status: true },
         ],
-        demoRows: [{ "id": "es1", "name": "مستشفى قروي جديد", "status": "in_progress" }],
       }}
     />
   );

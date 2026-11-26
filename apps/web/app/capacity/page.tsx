@@ -1,8 +1,8 @@
-import ModulePage from "@/components/ModulePage";
+import ModuleScreen from "@/components/ModuleScreen";
 
 export default function Page() {
   return (
-    <ModulePage
+    <ModuleScreen
       config={{
         titleKey: "capacity",
         subtitleAr: "إشغال المنشآت وطنيًا — مجاميع فقط دون تفاصيل مرضى (دورة 225)",
@@ -15,7 +15,6 @@ export default function Page() {
           { key: "bed_capacity", ar: "السعة", en: "Beds" },
           { key: "occupancy_pct", ar: "الإشغال %", en: "Occupancy %" },
         ],
-        demoRows: [{"id": "d1", "name_ar": "مستشفى جامعي نموذجي", "governorate": "القاهرة", "bed_capacity": 420, "occupancy_pct": 83.5}],
       }}
     />
   );
